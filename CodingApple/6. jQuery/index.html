@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery</title>
+    
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <h4 id="test" class="yellow-bg">안녕하세요</h4>
+
+    <!-- jquery CDN
+        uncompressed : 원본 파일
+        minified : 공백 제거 버전
+        slim : 기능많이빠진 라이트 버전
+    -->
+
+    <!-- 다른 사이트가 호스팅 해주는 js파일 가져오는것-->
+    <!-- jQuery 설치 위치 : <body>끝나기 전 추천-->
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+
+        // JS문법, 하나밖에 못 찾음
+        // document.querySelector('#test')
+
+        // JS문법, 전부 찾음 []번째
+        // document.querySelectorAll('#test')[0];
+
+        // document.getElementById('test').innerHTML = "???";
+
+        // jQuery 문법
+        // HTML전부(각종 태그) 변경 가능
+        $('#test').html('안녕');
+
+        // text(text 태그)만 변경가능
+        // $('#test').text('헬로');
+
+        // 출력만 하고싶을 때 () 안에 아무것도 쓰지 않으면 됨
+        // $('#test').html();
+
+        // 스타일 변경할 때  
+        // <h4 id="test" class="test1" style="color:red">안녕하세요</h4>
+        // $('CSS셀렉터').css(이걸, 이렇게)
+        // $('#test').css('color','red');
+
+        // jQuery로 HTML 다른 것 변경하려면
+        // $('CSS셀렉터').attr(이걸, 이렇게)
+
+        //<h4 id="test" class="test1">안녕하세요</h4> 에 yellow-bg라는 CSS class를 넣어보기
+        $('.yellow-bg').html();
+
+    </script>
+
+    <div class="alert-box" id="alert">
+        <p id="title">Alert 박스</p>
+
+        <!-- 버튼을 누르면 alertbox를 안보이게 함 -->
+        <!-- <button onclick="알림창동작('none')">X</button> -->
+
+        <!-- onclick대신 EventListener사용 -->
+        <button id="close">X</button>
+
+    </div>
+
+    <!-- 버튼을 누르면 alertbox를 보여줌 -->
+    <button onclick="알림창1열기('아이디입력해라')">버튼1</button>
+
+    <button onclick="알림창1열기('비번입력해라')">버튼2</button>
+
+    <!-- 변경할 HTML이 있으면 그 하단에 JS코딩 해야 함 -->
+    <!-- 이유 : HTML을 먼저 읽어야 JS로 조작이 가능 -->
+    <script>    
+
+        // 이벤트리스너 문법
+        // 왼쪽 요소('close')가 클릭('click')되면 코드를 실행(function(){})해줌
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        } )
+
+
+
+        // 파라미터로 코드 줄이기
+        function 알림창1열기 (구멍) {
+            
+            // 1. 제목 바꾸기
+            
+            //class명이 alert-box인것은 전부 찾아서 그 중 []번째 것을 선택
+            //document.getElementsByClassName('alert-box')[0]
+            
+            document.getElementById('title').innerHTML = 구멍;
+            
+            // 2. 열기
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        /*
+        function 알림창2열기 () {
+            
+            // 1. 제목 바꾸기
+            
+            //class명이 alert-box인것은 전부 찾아서 그 중 []번째 것을 선택
+            //document.getElementsByClassName('alert-box')[0]
+            
+            document.getElementById('title').innerHTML = '비번입력하세요';
+            
+            // 2. 열기
+            document.getElementById('alert').style.display = 'block';
+        }
+        */
+
+        // 파라미터로 코드 양 줄이기
+        function 알림창동작(변경) {
+            document.getElementById('alert').style.display = 변경;
+        }
+
+        /*  function 알림창닫기() {
+                document.getElementById('alert').style.display = 'none';
+            } 
+        */
+
+    </script>
+
+    <!-- 모든 JS들은 여기 넣는 것을 추천-->
+    
+</body>
+</html>

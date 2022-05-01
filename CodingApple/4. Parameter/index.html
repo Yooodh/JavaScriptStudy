@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parameter</title>
+    
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="alert-box" id="alert">
+        <p id="name">Alert 박스</p>
+
+        <!-- 버튼을 누르면 alertbox를 안보이게 함 -->
+        <button onclick="알림창동작('none')">닫기</button>
+
+    </div>
+
+    <!-- 버튼을 누르면 alertbox를 보여줌 -->
+    <button onclick="알림창동작('block', '아이디입력하셈')">버튼1</button>
+
+    <button onclick="알림창동작('block', '비번입력하셈')">버튼2</button>
+
+    <!-- 변경할 HTML이 있으면 그 하단에 JS코딩 해야 함 -->
+    <!-- 이유 : HTML을 먼저 읽어야 JS로 조작이 가능 -->
+    <script>    
+
+        // 파라미터로 코드 양 줄이기
+        function 알림창동작(변경, 글자변경) {
+            
+            //p태그에 id 부여하여 글자 변경
+            document.getElementById('name').innerHTML = 글자변경;
+            document.getElementById('alert').style.display = 변경;
+        }
+
+        /*  function 알림창닫기() {
+                document.getElementById('alert').style.display = 'none';
+            } 
+        */
+
+    </script>
+    
+</body>
+</html>
