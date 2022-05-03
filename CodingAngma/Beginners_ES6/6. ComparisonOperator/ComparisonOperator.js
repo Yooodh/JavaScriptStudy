@@ -29,10 +29,7 @@ console.log(a === b); // 일치 연산자 : ===을 쓰면 타임까지 비교해
 // if(Boolean : true, false){}
 // else절은 if문이 false일 때 실행된다.
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e1c8e2f3f9cc8b1a12196eb388757a7edbbdcf82
 // if
 const age = 30;
 

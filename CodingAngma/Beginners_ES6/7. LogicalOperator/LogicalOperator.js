@@ -70,8 +70,3 @@ if(gender === 'F' && (name3 === 'Mike' || isAdult2)){
 }else{
     console.log('X');
 } 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> e1c8e2f3f9cc8b1a12196eb388757a7edbbdcf82
