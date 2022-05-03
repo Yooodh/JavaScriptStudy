@@ -35,5 +35,4 @@ let num = 10;
 // ++를 앞에 적으면 증가시킨 값을 result에 넣는다.
 let result = ++num;
 
-
 console.log(result);

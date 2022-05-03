@@ -71,3 +71,4 @@ if(gender === 'F' && (name3 === 'Mike' || isAdult2)){
     console.log('X');
 } 
 
+
