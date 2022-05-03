@@ -81,6 +81,10 @@ let fruit = prompt('무슨 과일을 사고 싶나요?');
 //         console.log('그런 과일은 없습니다.');
 // }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1c8e2f3f9cc8b1a12196eb388757a7edbbdcf82
 // '멜론' 과 '수박'이 같은 가격이니까 묶어서 코드 줄이기
 switch(fruit){
     case '사과' :

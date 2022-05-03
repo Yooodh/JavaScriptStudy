@@ -87,4 +87,8 @@ for(let iii = 0; iii< 10; iii++){
     console.log(iii);
 }
 
+<<<<<<< HEAD
 // Tip. 명확한 횟수가 정해져 있으면 for문, 그게 아니라면 while문 사용
+=======
+// Tip. 명확한 횟수가 정해져 있으면 for문, 그게 아니라면 while문 사용
+>>>>>>> e1c8e2f3f9cc8b1a12196eb388757a7edbbdcf82

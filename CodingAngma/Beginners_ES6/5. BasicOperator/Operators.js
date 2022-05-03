@@ -35,4 +35,8 @@ let num = 10;
 // ++를 앞에 적으면 증가시킨 값을 result에 넣는다.
 let result = ++num;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1c8e2f3f9cc8b1a12196eb388757a7edbbdcf82
 console.log(result);
