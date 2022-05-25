@@ -1,3 +1,5 @@
+/********************************** #1 노드에 접근하기 **********************************/
+
 // Dom : Document Object Model (문서 객체 모델)
 // html 문서에 각 요소들을 트리 형식으로 표현해준다.
 // 개발자는 JS를 이용해서 이를 생성하거나 수정하거나 삭제할 수 있다. 
@@ -104,4 +106,89 @@
     pList.pop(); // x
     pList.filter(); // x
     pList.join(); // x
+*/
+
+
+/********************************** #2 부모, 자식 형제 노드 **********************************/
+
+/* 
+    // querySelectorAll 과 getElementsByTagName의 차이점
+    document.querySelectorAll('p'); // NodeList
+    document.getElementsByTagName('p'); // HTMLCollection
+
+    const pList1 = document.querySelectorAll('p');
+    const pList2 = document.getElementsByTagName('p');
+
+    // querySelectorAll로 가져온 리스트
+    pList1; // NodeList (한 번 저장된 값을 계속 사용) // 예외적으로 childNodes는 실시간 반영이 동작한다.
+
+    // getElementsByTagName로 가져온 리스트
+    pList2; // HTMLCollection(노드에 변경사항 실시간으로 반영)
+*/
+
+/* 
+    // 부모 노드 찾기 
+
+    // getElementById로 Red 선택
+    const red = document.getElementById('red');
+
+    // 부모 노드에 접근
+    red.parentNode;
+    red.parentElement;
+
+    // html
+    document.documentElement;
+
+    // parentNode는 부모 노드 중 모든 노드를 반환한다.
+    document.documentElement.parentNode; // #document
+
+    // parentElement는 부모 노드 중 요소 노드만 반환한다.
+    // 요소 노드 : html 태그로 이루어진 요소
+    document.documentElement.parentElement; // null
+*/
+
+/* 
+    // 자식 노드 찾기
+
+    // id가 color인 ul에서 자식 값 찾기
+    const ul = document.getElementById('color');
+
+    // 자식 노드 전부 찾기
+    ul.childNodes; // NodeList
+
+    // 자식 노드 중 요소 노드 찾기
+    ul.children; // HTMLCollection
+
+    // 첫 번째 노드 가져오기
+    ul.firstChild;
+
+    // 마지막 노드 가져오기
+    ul.lastChild;
+
+    // 첫 번째 요소 노드 가져오기
+    ul.firstElementChild;
+
+    // 마지막 요소 노드 가져오기
+    ul.lastElementChild;
+*/
+
+/* 
+    // 형제 노드 찾기
+
+    // blue를 기준으로 찾기
+    const blue = document.getElementById('blue');
+
+    // 형제 노드는 이전 형제와 다음 형제로 나뉜다.
+
+    // 이전 형제
+    blue.previousSibling;
+
+    // 다음 형제 
+    blue.nextSibling;
+
+    // 이전 형제 요소 
+    blue.previousElementSibling;
+
+    // 다음 형제 요소 
+    blue.nextElementSibling;
 */
