@@ -344,6 +344,69 @@
     ul.removeChild(ul.lastElementChild);
 */
 
+/********************************** #4 CSS style, class 제어 **********************************/
+
+/* 
+    box.style // CSSStyleDeclaration 라는 객체가 나오며, 많은 스타일들을 볼 수 있다.
+
+    // box의 클래스에 접근하려면 box.className 이라는 프로퍼티를 이용하면 된다.
+    box.className; // ''
+
+    // box에 빨간색 배경넣기
+    box.className = 'bg-red';
+
+    // box에 파란색 배경넣기
+    box.className = 'bg-blue';
+
+    // text color 핑크색으로 하기
+    box.className = 'txt-pink'; // 배경색이 사라진다.
+
+    // className를 사용해서 기존에 있던 클래스는 유지하면서 추가하려면 둘 다 적어주어야 한다.
+    box.className = 'bg-blue txt-pink';
+
+    // 프로젝트에서 클래스의 개수가 상당히 많을 수도 있다.
+    // 그 때마다 어떤 클래스가 있는 지 먼저 접근해서 파악하고 추가, 제거, 수정할 때마다 다시 다 적어주어야 한다.
+    // 그래서 className은 잘 사용하지 않는다.
+    // 그럴때는 classList 프로퍼티를 사용하면 된다.
+*/
+
+/* 
+    // classList
+    box.classList; // DOMTokenList(2) 
+
+    // DOMTokenList
+    // add, remove 
+    // 클래스를 추가, 제거 할 수 있다.
+
+    // 추가
+    box.classList.add('txt-white');
+
+    // 제거
+    box.classList.remove('txt-white');
+
+    // 여러개의 클래스를 추가, 제거하려면 쉼표로 구분해서 적어주면 된다.
+    box.classList.add('bg-green', 'txt-yellow');
+
+    // DOMTokenList
+    // replace
+    // bg-red를 bg-blue로 바꾸기
+    box.classList.replace('bg-red', 'bg-blue');
+
+    // DOMTokenList
+    // toggle
+    // 특정 클래스를 넣었다 뺐다 하기
+    // 해당 클래스가 있으면 제거하고, 없으면 넣어주기
+
+    // bg-red 클래스를 추가, 제거하기
+    // setInterval을 사용하여 1초에 한번씩 반복
+    setInterval(() => {
+        box.classList.toggle('bg-red');
+    }, 1000)
+
+*/
+
+
+
 
 
 /********************************** NODE_VALUE **********************************/
