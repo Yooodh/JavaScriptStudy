@@ -192,3 +192,187 @@
     // 다음 형제 요소 
     blue.nextElementSibling;
 */
+
+
+/********************************** #3 노드 생성, 추가, 복제, 삭제 **********************************/
+
+/* 
+    // Dom 노드 수정
+
+    // blue 선택
+    const blue = document.getElementById('blue');
+
+    blue.firstChild; // text // "Blue"
+    blue.firstElementChild; // null
+
+    // 변수 만들기
+    const blueTextNode = blue.firstChild;
+
+    // blueTextNode 정보 보기
+    blueTextNode.nodeName; // '#text'
+    blueTextNode.nodeType; // 3
+    blueTextNode.nodeValue; // 'Blue'
+
+    // 특정 요소의 텍스트를 가져와서 써야할 때 nodeValue를 활용할 수 있다.
+
+    // 수정하기
+    blueTextNode.nodeValue = '';
+
+    // nodeValue는 모든 노드가 가지고 있는 프로퍼티지만 text노드가 아니면 null을 반환한다.
+
+    // ul 선택
+    const ul = document.getElementById('color');
+
+    ul.nodeType; // 1 // 요소노드
+    ul.nodeName; // 'UL' // 요소노드의 태그명을 대문자로 반환
+    ul.nodeValue; // null // 텍스트 노드에서만 nodeValue를 이용해서 수정이 가능하다.
+
+    // textContent를 이용하면 텍스트 노드가 아니더라도 값을 수정할 수 있다.
+    ul.textContent; // '\n        Red\n        \n        파랑\n        Green\n    ' // 마크업이 모두 날아간다.
+
+    // 수정하기
+    ul.textContent = '<li>RED</li>' // '<li>RED</li>' // 마크업까지 텍스트로 출력된다.
+
+    // 마크업을 제대로 표현하기
+    ul.innerHTML = '<li>RED</li>' // '<li>RED</li>' 
+
+    // innerHTML 간단하게 마크업을 적용할 수 있는 편리한 기능이지만
+    // 단점으로는 요소를 추가, 제거, 수정 할 때마다 다시 모든 HTML을 String으로 작성해야 한다.
+*/
+
+/* 
+    // innerHTML 사용하여 자식 텍스트 노드 만들기
+
+    // li 요소 만들기
+    const newLi = document.createElement('li');
+    newLi; // <li></li>
+
+    // 텍스트 노드 만들어주기
+    newLi.innerHTML = 'green';
+    newLi; // <li>green</li>
+
+    // ul 내부로 넣어주기
+    const ul = document.getElementById('color');
+    ul.appendChild(newLi); 
+*/
+
+/* 
+    // innerHTML 사용하지 않고 자식 텍스트 노드 만들기
+
+    // li 요소 만들기
+    const newLi2 = document.createElement('li');
+
+    // 텍스트 노드 생성
+    const newText = document.createTextNode('pink');
+    newText; // "pink"
+
+    // li에 텍스트 노드 넣기
+    newLi2.appendChild(newText);
+
+    // ul에 li 넣기
+    ul.appendChild(newLi2);
+*/
+
+/* 
+    // appendChild는 항상 지정한 부모 노드에 가장 마지막 자식으로 추가된다. 
+    // 원하는 위치가 마지막이 아니라면 insertBefore를 이용한다.
+    // 특정 노드를 전달하면 그 노드 전에 삽입이 된다.
+
+    // li 만들기
+    const newLi3 = document.createElement('li');
+
+    // 텍스트 노드 만들기
+    const textNode3 = document.createTextNode('black');
+
+    // li에 추가하기
+    newLi3.appendChild(textNode3);
+
+    // red 지정하기
+    const red = document.getElementById('red');
+
+    // insertBefore 두 번째 인자로 red를 전달한다. (red 앞에 li를 넣어라)
+    ul.insertBefore(newLi3, red);
+*/
+
+/* 
+    // appendChild, insertBefore
+    // 새롭게 노드를 생성하지 않고 기존의 노드를 이 메서드들에게 전달하면 노드가 이동된다.
+
+    // 기존에 존재하던 red를 appendChild에 전달하기
+
+    // red를 제일 뒤로 이동하기
+    ul.appendChild(red); 
+
+    // red를 가장 위로 이동하기
+    ul.insertBefore(red, newLi3);
+*/
+
+/* 
+    // 노드 복제하기
+    // cloneNode
+    // cloneNode는 인수로 Boolean 값을 받는다.
+
+    // black를 복제하여 newBlack 만들기
+    const newBlack = newLi3.cloneNode();
+
+    // li 추가하기
+    ul.appendChild(newBlack); // li 태그만 복제가 된다.
+
+    // 깊은 복제 실행 (자식 노드 까지 모두 복제 된다.)
+    // 여기서 자식노드는 text 노드
+    // 아무것도 안적거나 false로 전달하면 노드 자식만 복제된다.
+    const newBlack2 = newLi3.cloneNode(true);
+
+    // appendChild로 newBlack2 추가하기
+    ul.appendChild(newBlack2);
+*/
+
+/* 
+    // 노드 삭제하기
+    // removeChild
+
+    // red 삭제하기
+    ul.removeChild(red);
+
+    // newBlack2 삭제하기
+    ul.removeChild(newBlack2);
+
+    // 첫 번째 자식 요소 노드 삭제
+    ul.removeChild(ul.firstElementChild);
+
+    // 마지막 자식 요소 노드 삭제
+    ul.removeChild(ul.lastElementChild);
+*/
+
+
+
+/********************************** NODE_VALUE **********************************/
+
+/* 
+    Node.ELEMENT_NODE (1) // 요소 노드
+    An Element node like <p> or <div>.
+    
+    Node.ATTRIBUTE_NODE (2)
+    An Attribute of an Element.
+
+    Node.TEXT_NODE (3) // 텍스트 노드
+    The actual Text inside an Element or Attr.
+
+    Node.CDATA_SECTION_NODE (4)
+    A CDATASection, such as <!CDATA[[ ... ]]>.
+
+    Node.PROCESSING_INSTRUCTION_NODE (7)
+    A ProcessingInstruction of an XML document, such as <?xml-stylesheet ... ?>.
+
+    Node.COMMENT_NODE (8)
+    A Commit node, such as <!-- ... -->.
+
+    Node.DOCUMENT_NODE (9)
+    A Document node.
+
+    Node.DOCUMENT_TYPE_NODE (10)
+    A DocumentType node, such as <!DOCTYPE html>.
+
+    Node.DOCUMENT_FRAGMENT_NODE (11)
+    A DocumentFragment node.
+*/
