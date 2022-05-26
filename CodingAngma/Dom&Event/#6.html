@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#6</title>
+    <script src="Index.js"></script>
+    <link href="Index.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li id="color">Red</li>
+        </ul>
+    </div>
+
+    <div id="box2">
+        <input id="txt" />
+    </div>
+
+    <div id="box3">
+        <ul id="list2">
+            <li id="red" class="on"><a href="#">Red</a></li>
+            <li id="blue"><a href="#">Blue</a></li>
+            <li id="green"><a href="#">Green</a></li>
+            <li id="pink"><a href="#">Pink</a></li>
+        </ul>
+    </div>
+    <script>
+        const box = document.getElementById("box");
+        const list = document.getElementById("list");
+        const color = document.getElementById("color");
+
+        document.body.addEventListener("click", () => {
+            console.log("1. body");
+        });
+
+        box.addEventListener("click", () => {
+            console.log("2. div");
+        });
+
+        list.addEventListener("click", () => {
+            console.log("3. ul");
+        });
+
+        color.addEventListener("click", () => {
+            console.log("4. li");
+        });
+
+        const box2 = document.getElementById("box2");
+        const txt = document.getElementById("txt");
+
+        // document.body.addEventListener("focus", () => {
+        //     console.log("focus - 1. body");
+        // });
+
+        // box2.addEventListener("focus", () => {
+        //     console.log("focus - 2. div");
+        // });
+        
+        // txt.addEventListener("focus", () => {
+        //     console.log("focus - 3. input");
+        // });
+
+        document.body.addEventListener("focusin", () => {
+            console.log("focusin - 1. body");
+        });
+
+        box2.addEventListener("focusin", () => {
+            console.log("focusin - 2. div");
+        });
+
+        // txt.addEventListener("focusin", () => {
+        //     console.log("focusin - 3. input");
+        // });
+        
+        // 이벤트 버블링은 인위적으로 막을 수 있다.
+        // 인풋 요소에 이벤트 객체를 받아서
+        txt.addEventListener("focusin", (event) => {
+            
+            // stopPropagation을 실행해준다.
+            event.stopPropagation();
+            console.log("focusin - 3. input");
+        });
+
+        // document.body.addEventListener("blur", () => {
+        //     console.log("blur - 1. body");
+        // });
+
+        // box2.addEventListener("blur", () => {
+        //     console.log("blur - 2. div");
+        // });
+
+        // txt.addEventListener("blur", () => {
+        //     console.log("blur - 3. input");
+        // });
+
+        document.body.addEventListener("focusout", () => {
+            console.log("focusout - 1. body");
+        });
+
+        box2.addEventListener("focusout", () => {
+            console.log("focusout - 2. div");
+        });
+
+        // txt.addEventListener("focusout", () => {
+        //     console.log("focusout - 3. input");
+        // });
+
+        // 이벤트 버블링은 인위적으로 막을 수 있다.
+        // 인풋 요소에 이벤트 객체를 받아서
+        txt.addEventListener("focusout", (event) => {
+
+            // stopPropagation을 실행해준다.
+            event.stopPropagation();
+            console.log("focusout - 3. input");
+        });
+
+        const list2 = document.getElementById("list2");
+        const colors =list2.children;
+
+        function clickHandler(event) {
+            let target = event.target;
+
+            // 만약 target에 이벤트 타겟이 A 이면
+            if(target.tagName === "A") {
+
+                // target을 li(A의 부모요소)로 할당해준다.
+                target = target.parentElement;
+
+                // 만약 target이 currentTarget과 같다면
+            } else if(target === event.currentTarget){
+
+                // 그냥 return 해준다.
+                return;
+            }
+            // 이벤트 위임을 사용하지 않았다면 target과 currentTarget는 동일하다.
+            // 이벤트를 발생하는 요소 = 핸들러가 등록된 요소
+            console.log("target", event.target); // 이벤트를 발생시키는 요소
+            console.log("currentTarget", event.currentTarget); // 이벤트 핸들러가 등록된 요소
+            for(c of colors) {
+
+                // 모든 li에 on을 제거한다.
+                c.classList.remove("on");
+            }
+
+            // 클릭된 li에 on class를 추가해준다.
+            // target에 on class를 추가해준다.
+            target.classList.add("on");
+        }
+
+        // 이 핸들러는 li에 각각 모두 등록되고 있다.
+        // 지금은 li가 4개 뿐이지만 100개, 200개가 넘어가면 상당히 코드가 길어질 것이고 성능에도 좋지않다.
+        // 유지 보수도 힘들다.
+        // 그래서 이럴 때는 li가 아닌 ul(부모요소)의 이벤트를 위임할 수 있다.
+        // document.getElementById("red").addEventListener("click", clickHandler);
+        // document.getElementById("blue").addEventListener("click", clickHandler);
+        // document.getElementById("green").addEventListener("click", clickHandler);
+        // document.getElementById("pink").addEventListener("click", clickHandler);
+
+        // li 개수가 바뀌어도 코드수정이 필요없어서 유지보수에 좋다. 
+        // li에서 발생한 이벤트가 ul에 등록된 이벤트 핸들러를 실행시켜주는 원리
+        document.getElementById("list2").addEventListener("click", clickHandler);
+    </script>
+</body>
+</html>
