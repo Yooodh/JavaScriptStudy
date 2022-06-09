@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* perspective의 값이 작을수록 원근감을 더 가까이서 볼 수 있다. */
+    perspective: 1000px;
+}
+
+
+.flip-btn {
+    width: 200px;
+    height: 100px;
+    color: white;
+
+    /* 수평 중앙에 위치 */
+    text-align: center;
+
+    /* 요소의 height 값과 line-height 값이 같으면 수직 중앙 정렬된다. */
+    /* 단, 텍스트가 한 줄 일때만 가능하다. */
+    line-height: 100px;
+
+    /* 3D 공간에 배치하기 */
+    transform-style: preserve-3d;
+
+    /* transform 회전에 해당하는 애니메이션이 0.5초에 거쳐서 보이게 하기 */
+    transition: .5s;
+
+    cursor: pointer;
+}
+
+.flip-btn:hover{
+    /* 음수로 지정해서 아래로 회전하기 */
+    transform: rotateX(-90deg);
+}
+
+.front {
+    background-color: goldenrod;
+    height: 100px;
+    transform: translateZ(50px);
+}
+
+.back {
+    background-color: darkgoldenrod;
+    height: 100px;
+
+    /* rotateX 가로줄을 기준으로 회전 */
+    /* translateZ 3D 일 때 위아래로 이동 */
+    transform: rotateX(90deg) translateZ(150px);
+}
