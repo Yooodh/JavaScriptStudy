@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    
+    /* 왼쪽 테두리 1px + 왼쪽 패딩 5px + 버튼 65px + 그리드갭 5px + 버튼 65px + 그리드갭 5px + 버튼 65px + 그리드갭 5px + 버튼 65px + 오른쪽 패딩 5px + 오른쪽 테두리 1px = 287px  */
+    width: 287px;
+
+    border: 1px solid #333;
+    background-color: #ccc;
+    padding: 5px;
+}
+
+.calculator form{
+    display: grid;
+
+    /* 열, 너비 */
+    grid-template-columns: repeat(4, 65px);
+
+    /* 행의 높이 */
+    grid-auto-rows: 65px;
+
+    grid-gap: 5px;
+}
+
+.calculator form input {
+    border: 2px solid #333;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.calculator form input:hover{
+    box-shadow: 1px 1px 2px #333;
+}
+
+.calculator form .clear {
+    background-color: #ed4848;
+}
+
+.calculator form .operator {
+    background-color: orange;
+}
+
+.calculator form .dot {
+    background-color: green;
+}
+
+.calculator form input[type='text'] {
+
+    /* grid-column에서 4칸 차지 */
+    grid-column: span 4;
+
+    text-align: right;
+    padding: 0 10px;
+}
+
+.calculator form .clear {
+
+    /* grid-column에서 3칸 차지 */
+    grid-column: span 3;
+}
+
+.calculator form .result {
+    grid-column: span 2;
+}
