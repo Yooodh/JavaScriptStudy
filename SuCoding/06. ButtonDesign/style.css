@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #204063;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn {
+    background: none;
+    border: 2px solid white;
+    font-size: 35px;
+    color: white;
+    padding: 20px 40px;
+    width: 250px;
+    cursor: pointer;
+
+    /* span영역이 button영역 바깥으로 벗어나지 않게 하기 */
+    position: relative;
+}
+
+.btn-swap span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: #ed4848; */
+    padding: 20px 40px;
+    width: 100%;
+
+    /* 불투명하게 하기 */
+    opacity: 0;
+
+    /* fade-in 효과 주기 */
+    transition: opacity 0.5s;
+}
+
+.btn-swap:hover span {
+    opacity: 1;
+}
+
+/* fade-in 효과에 width가 0%에서 100%로 변경되는 추가적인 효과 */
+.btn-swap.btn-swap::before{
+    content: "";
+    /* width: 100%; */
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ed4848;
+
+    /* fade-in 효과 주기 */
+    transition: width 0.5s;
+}
+
+.btn-swap:hover::before {
+    width: 100%;
+
+    
+}
