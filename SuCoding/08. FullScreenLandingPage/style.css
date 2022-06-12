@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    
+    /* inherit : 부모값으로부터 상속받기 */
+    color: inherit;
+    
+    text-decoration: none;
+}
+
+#main {
+    background: 
+        /* 반복되지 않게 no-repeat 사용 */
+        url(images/Imgur.jpg) no-repeat;
+        
+        background-size: cover;
+
+        /* background-position: 가로축 세로축 */
+        background-position: center center;
+
+        width: 100vw;
+        height: 100vh;
+        font-family: 'Questrial', sans-serif;
+}
+
+#contents {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: white;
+    text-align: center;
+}
+
+#contents h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 70px;
+    margin-bottom: 16px;
+}
+
+
+#contents p {
+    font-size: 23px;
+    margin-bottom: 16px;
+}
+
+#contents a {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: all 0.5s;
+}
+
+#contents a:hover{
+    background-color: black;
+}
+
+@media(max-width:769px){
+    #contents h1 {
+        font-size: 50px;
+    }
+    
+    #contents p {
+        font-size: 20px;
+    }
+
+    #contents a {
+        font-size: 14px;
+    }
+}
