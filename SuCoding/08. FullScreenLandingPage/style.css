@@ -15,7 +15,7 @@ a {
 #main {
     background: 
         /* 반복되지 않게 no-repeat 사용 */
-        url(images/Imgur.jpg) no-repeat;
+        url(images/imgur.jpg) no-repeat;
         
         background-size: cover;
 
