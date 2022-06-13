@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function createSnow() {
+            const el = document.createElement("div"); // div태그 만들기
+            el.classList.add('snow'); // snow 클래스 달아주기
+            el.style.marginLeft = randomPostion() + 'px';
+            document.body.appendChild(el); // body 요소에 추가해주기
+        }
+
+        function randomPostion() {
+            return Math.floor(Math.random() * window.innerWidth); // 웹 브라우저 넓이 안에서 랜덤한 숫자가 나올수 있도록 지정한다.
+        }
+
+        for(let i=0; i<300; i++) { // 300개 요소 넣기
+            createSnow();
+        }
+    </script>   
+</body>
+</html>
