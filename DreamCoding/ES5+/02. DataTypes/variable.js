@@ -1,20 +1,20 @@
 // 1. Use strict
-// added in ES 5 
+// added in ES 5
 // use this for Vanilla Javascript
 'use strict';
 
 console.log(age);
 
-// 2. Variable
+// 2. Variable, rw(read/wrtie) 메모리에 값을 읽고 쓰는 것이 가능하다.
 // let (added in ES6)
 let globalName = 'global name';
 
 {
-    let name = 'ellie';
-    console.log(name);
-    name = 'hello';
-    console.log(name);
-    console.log(globalName);
+  let name = 'ellie';
+  console.log(name);
+  name = 'hello';
+  console.log(name);
+  console.log(globalName);
 }
 
 console.log(name);
@@ -24,22 +24,28 @@ console.log(globalName);
 // var hoisting (move declaration from botton to top)
 // has no block scope
 {
-    age = 4;
-    var age;
+  age = 4;
+  var age;
 }
 
 console.log(age);
 
-// 3. Contants
-// faver immutable data type always for a few reasons;
-// - security
-// - thread safety
-// - reduce human mistakes
+// 3. Constant, r(read only) 읽기만 가능하고 다시 다른 값으로 쓰는 것이 불가능하다.
+// use const whenever possible.
+// only use let if variable needs to change.
 
 // Mutavle let
 // Immutable const
 const daysInWeek = 7;
-const maxNumber = 5; 
+const maxNumber = 5;
+
+// Note!
+// Immutable data types: primitive types, frozen objects (i.e. object.freeze()) // 데이터 타입을 절대 변경하지 못한다.
+// Mutable data types: all objects by default are mutable in JS // 변경이 가능한 데이터 타입
+// faver immutable data type always for a few reasons:
+// - security
+// - thread safety
+// - reduce human mistakes
 
 // 4. Variable types
 // primitive, single item : number, string, boolin, null, undefined, symbol
@@ -52,9 +58,9 @@ console.log(`value: ${count}, type: ${typeof count}`);
 console.log(`value: ${size}, type: ${typeof size}`);
 
 // number - special numberic values : infinity, -infinity, NaN
-const infinity = 1/0;
+const infinity = 1 / 0;
 const negativeInfinity = -1 / 0;
-const nAn = 'not a number' /2;
+const nAn = 'not a number' / 2;
 
 console.log(infinity);
 console.log(negativeInfinity);
@@ -105,9 +111,8 @@ console.log(gSymbol1 === gSymbol2); //true
 console.log(`value: ${symbol1.description}, type: ${typeof symbol1}`);
 
 //object, real-life object, data structure
-const ellie = {name: 'ellie', age: 20};
+const ellie = { name: 'ellie', age: 20 };
 ellie.gae = 21;
-
 
 // 5. Dynamic typing: dynamically typed language
 let text = 'hello';
@@ -119,10 +124,10 @@ console.log(`value: ${text}, type: ${typeof text} $`);
 text = 1;
 console.log(`value: ${text}, type: ${typeof text}`);
 
-text = '7'+ 5;
+text = '7' + 5;
 console.log(`value: ${text}, type: ${typeof text}`);
 
-text = '8'/ '2';
+text = '8' / '2';
 console.log(`value: ${text}, type: ${typeof text}`);
 
 // console.log(text.charAt(0)); // error
