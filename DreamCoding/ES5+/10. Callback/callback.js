@@ -66,20 +66,20 @@ const password = prompt('enter your password');
 userStorage.loginUser(
   id,
   password,
-  (user) => {
+  user => {
     UserStorage.getRoles(
       user,
-      (userWithRole) => {
+      userWithRole => {
         alert(
           `Hello ${userWithRole.name}, you have a ${userWithRole.role} role`
         );
       },
-      (error) => {
+      error => {
         console.log(error);
       }
     );
   },
-  (error) => {
+  error => {
     console.log(error);
   }
 );
