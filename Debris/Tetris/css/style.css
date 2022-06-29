@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  /* li에 점 없애기 */
+  list-style: none;
+}
+
+body {
+  height: 100%;
+
+  /* 넘치는 부분 스크롤 생기지 않게 하기 */
+  overflow: hidden;
+}
+
+.score {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 2rem;
+}
+
+/* 테트리스가 들어가게 될 틀 */
+.playground > ul {
+  border: 1px solid #333;
+  width: 250px;
+  margin: 0 auto;
+}
+
+/* 테트리스 눈금판 */
+.playground > ul > li {
+  width: 100%;
+  height: 25px;
+}
+
+.playground > ul > li > ul {
+  /* 가로로 나열되게 하기 */
+  display: flex;
+}
+
+/* 테트리스 내부의 매트릭스 */
+.playground > ul > li > ul > li {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid #ccc;
+}
