@@ -20,18 +20,33 @@ const BLOCKS = {
       [1, 0],
       [1, 1],
     ],
-    [],
-    [],
-    [],
+    [
+      [1, 2],
+      [0, 1],
+      [1, 0],
+      [1, 1],
+    ],
+    [
+      [1, 2],
+      [0, 1],
+      [2, 1],
+      [1, 1],
+    ],
+    [
+      [2, 1],
+      [1, 2],
+      [1, 0],
+      [1, 1],
+    ],
   ],
 };
 
 // 다음 블럭의 타입과 좌표 등 정보들을 가지고 있는 변수
 const movingItem = {
   type: 'tree',
-  direction: 0, // 화살표 위 방향키를 눌렀을 때 돌아가게 하는 역할을 하는 지표
+  direction: 3, // 화살표 위 방향키를 눌렀을 때 돌아가게 하는 역할을 하는 지표
   top: 0, // 좌표 기준 어디까지 내려와있는지, 내려가야 하는지 표현해주는 역할
-  left: 3, // 좌우 값을 알려주는 역할
+  left: 0, // 좌우 값을 알려주는 역할
 };
 
 // 처음에 랜더링이 되면 init 호출
@@ -65,7 +80,8 @@ function prependNewLine() {
   playground.prepend(li);
 }
 
-function renderBlocks() {
+// moveType을 보내지 않는 경우에는 빈 값(초기화)를 넣어준다.
+function renderBlocks(moveType = '') {
   const { type, direction, top, left } = tempMovingItem;
   // tempMovingItem.type;
   // tempMovingItem.direction;
@@ -80,7 +96,11 @@ function renderBlocks() {
 
   // forEach() : 배열에 활용 가능한 메서드로, 파라미터로 주어진 함수를 배역 요소 각각에 대해 실행하는 메서드이다.
   // map() 메서드와 차이점은 따로 return 하는 값이 없다는 점이다.
-  BLOCKS[type][direction].forEach((block) => {
+  // BLOCKS[type][direction].forEach((block) => {
+
+  // forEach()는 반복문 중간에 break시킬 수 없기 때문에 some()을 사용해서 원하는 시점에 반복문을 중지를 시키고 다시 실행하는 것이 효율적이다.
+  // some() : 배열 안의 어떤 요소라도 주어진 판별 함수를 통과하는지 테스트한다.
+  BLOCKS[type][direction].some((block) => {
     // ul안에 들어있는 li의 값
     const x = block[0] + left;
 
@@ -115,6 +135,11 @@ function renderBlocks() {
           seizeBlock();
         }
       }, 0);
+      // renderBlocks();
+
+      // 빈 값이 있을 때 return true가 걸리면 굳이 돌리지 않고
+      // 새롭게 renderBlocks를 시작할 수 있도록 한다.
+      return true;
     }
   });
   // render가 성공할 때마다 값 변경
@@ -130,7 +155,23 @@ function renderBlocks() {
 // moving이라는 클래스를 다 뗀 후에
 // 새로운 블럭 만들기
 function seizeBlock() {
-  console.log('seize block');
+  // moving 클래스를 가진 요소들의
+  const movingBlocks = document.querySelectorAll('.moving');
+  movingBlocks.forEach((moving) => {
+    // remove를 moving해준다.
+    moving.classList.remove('moving');
+    moving.classList.add('seized');
+  });
+  // seizeBlock이 완성되면 generateNewBlock 실행
+  generateNewBlock();
+}
+
+function generateNewBlock() {
+  movingItem.top = 0;
+  movingItem.left = 3;
+  movingItem.direction = 0;
+  tempMovingItem = { ...movingItem };
+  renderBlocks();
 }
 
 // target을 한 번 더 체크하는 함수 생성
@@ -138,7 +179,8 @@ function seizeBlock() {
 // 블럭이 맨 하단으로 떨어졌을 때 또 다른 블럭이 생성되고
 // 그 블럭이 블럭위에 떨어졌을 때 그 밑에 블럭이 있는지 없는지 체크
 function checkEmpty(target) {
-  if (!target) {
+  // contains : class를 가지고 있는지, 포함하고 있는지를 확인
+  if (!target || target.classList.contains('seized')) {
     return false;
   }
   return true;
@@ -147,9 +189,24 @@ function checkEmpty(target) {
 function moveBlock(moveType, amount) {
   // movingItem 안에 들어있는 left를 변경
   tempMovingItem[moveType] += amount;
-  renderBlocks();
+
+  // moveBlock이 됐을 때만 moveType을 renderBlocks에 보내준다.
+  renderBlocks(moveType);
 }
 // renderBlocks();
+
+function changeDirection() {
+  const direction = tempMovingItem.direction;
+  direction === 3
+    ? (tempMovingItem.direction = 0)
+    : (tempMovingItem.direction += 1);
+
+  // tempMovingItem.direction += 1;
+  // if (tempMovingItem.direction === 4) {
+  //   tempMovingItem.direction = 0;
+  // }
+  renderBlocks();
+}
 
 /* event handling */
 document.addEventListener('keydown', (e) => {
@@ -165,6 +222,11 @@ document.addEventListener('keydown', (e) => {
     case 40:
       moveBlock('top', 1);
       break;
+
+    case 38:
+      changeDirection();
+      break;
+
     default:
       break;
   }
