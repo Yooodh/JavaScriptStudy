@@ -1,3 +1,5 @@
+import BLOCKS from './block.js';
+
 /* DOM */
 const playground = document.querySelector('.playground > ul');
 
@@ -11,39 +13,9 @@ let duration = 500; // 블럭이 떨어지는 시간
 let downInterval;
 let tempMovingItem; // 실행하기 전에 담아두기
 
-const BLOCKS = {
-  tree: [
-    // 방향키를 돌렸을 때 변하는 모양별로 배열 생성
-    [
-      [2, 1],
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
-    [
-      [1, 2],
-      [0, 1],
-      [1, 0],
-      [1, 1],
-    ],
-    [
-      [1, 2],
-      [0, 1],
-      [2, 1],
-      [1, 1],
-    ],
-    [
-      [2, 1],
-      [1, 2],
-      [1, 0],
-      [1, 1],
-    ],
-  ],
-};
-
 // 다음 블럭의 타입과 좌표 등 정보들을 가지고 있는 변수
 const movingItem = {
-  type: 'tree',
+  type: '',
   direction: 3, // 화살표 위 방향키를 눌렀을 때 돌아가게 하는 역할을 하는 지표
   top: 0, // 좌표 기준 어디까지 내려와있는지, 내려가야 하는지 표현해주는 역할
   left: 0, // 좌우 값을 알려주는 역할
@@ -58,12 +30,11 @@ function init() {
   // Spread Operator는 movingItem 자체를 부르는 게 아니라 껍데기를 벗긴 안의 내용만 가져오는 것이기 때문에 값을 복사한다는 느낌으로 사용하면 좋다.
   // Spread Operator를 사용해서 movingItem 안에 있는 값만 가져오기 때문에 movingItem의 값이 변경이 되더라도 tempMovingItem은 값이 변경되지 않는다.
   tempMovingItem = { ...movingItem };
-
   // ul 안에 li 20개 넣기
   for (let i = 0; i < GAME_ROWS; i++) {
     prependNewLine();
   }
-  renderBlocks();
+  generateNewBlock();
 }
 
 function prependNewLine() {
@@ -167,6 +138,18 @@ function seizeBlock() {
 }
 
 function generateNewBlock() {
+  // 진행되고 있는 interval이 있을 수 있으니까 downInterval을 끈다.
+  clearInterval(downInterval);
+  downInterval = setInterval(() => {
+    // 위로 가는 모양을 1씩 증가하는 interval추가
+    moveBlock('top', 1);
+  }, duration);
+
+  // block 랜덤으로 떨어지게 하기
+  const blockArray = Object.entries(BLOCKS);
+  const randomIndex = Math.floor(Math.random() * blockArray.length);
+  movingItem.type = blockArray[randomIndex][0];
+
   movingItem.top = 0;
   movingItem.left = 3;
   movingItem.direction = 0;
