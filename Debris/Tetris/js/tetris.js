@@ -2,6 +2,9 @@ import BLOCKS from './block.js';
 
 /* DOM */
 const playground = document.querySelector('.playground > ul');
+const gameText = document.querySelector('.game-text');
+const scoreDisplay = document.querySelector('.score');
+const restartButton = document.querySelector('.game-text > button');
 
 /* Setting */
 const GAME_ROWS = 20;
@@ -92,13 +95,20 @@ function renderBlocks(moveType = '') {
     } else {
       // tempMovingItem값을 원래대로 돌리기
       tempMovingItem = { ...movingItem };
+      // moveType 이 retry 라면
+      if (moveType === 'retry') {
+        // interval을 멈추고
+        clearInterval(downInterval);
+        // showGameoverText를 보여준다.
+        showGameoverText();
+      }
 
       // renderBlocks()를 다시 한번 실행 시키는 재귀함수 호출
       // 콜스택 에러를 방지하기 위해 이벤트 루프 안에 넣지 말고 외부로 빼놓았다가
       // 태스크 큐에 넣어놓았다가 이벤트 루프가 모두 실행 된 후에
       // 다시 실행할 수 있도록 setTimeout으로 잠시 빼놓는다.
       setTimeout(() => {
-        renderBlocks();
+        renderBlocks('retry');
 
         // 밑으로 떨어지는 중에 없는 것이 발생하게되면
         if (moveType === 'top') {
@@ -161,6 +171,10 @@ function checkMatch() {
 
       // 한줄이 없어질 때마다 prependNewLine를 실행한다.
       prependNewLine();
+
+      // 스코어 1점씩 증가
+      score++;
+      scoreDisplay.innerText = score;
     }
   });
 
@@ -228,6 +242,10 @@ function dropBlock() {
   }, 10);
 }
 
+function showGameoverText() {
+  gameText.style.display = 'flex';
+}
+
 /* event handling */
 document.addEventListener('keydown', (e) => {
   switch (e.keyCode) {
@@ -254,4 +272,15 @@ document.addEventListener('keydown', (e) => {
     default:
       break;
   }
+});
+
+restartButton.addEventListener('click', () => {
+  // playground 의 innerHTML을 초기화 시켜주고
+  playground.innerHTML = '';
+
+  // 종료화면 안보이게 하기
+  gameText.style.display = 'none';
+
+  // init하기
+  init();
 });
