@@ -133,7 +133,37 @@ function seizeBlock() {
     moving.classList.remove('moving');
     moving.classList.add('seized');
   });
-  // seizeBlock이 완성되면 generateNewBlock 실행
+
+  checkMatch();
+
+  // // seizeBlock이 완성되면 generateNewBlock 실행
+  // generateNewBlock();
+}
+
+function checkMatch() {
+  const childNodes = playground.childNodes;
+  // childNodes의 forEach를 돌려서 각각의 li 체크
+  childNodes.forEach((child) => {
+    let matched = true;
+
+    // ul에 childNodes를 forEach를 돌려서 li 체크
+    child.children[0].childNodes.forEach((li) => {
+      // li.classList.contains중에 하나라도 seized클래스가 없는게 있다면
+      if (!li.classList.contains('seized')) {
+        matched = false;
+      }
+    });
+
+    // matched가 된 것이 있으면
+    if (matched) {
+      // child 를 지워준다.
+      child.remove();
+
+      // 한줄이 없어질 때마다 prependNewLine를 실행한다.
+      prependNewLine();
+    }
+  });
+
   generateNewBlock();
 }
 
@@ -191,6 +221,13 @@ function changeDirection() {
   renderBlocks();
 }
 
+function dropBlock() {
+  clearInterval(downInterval);
+  downInterval = setInterval(() => {
+    moveBlock('top', 1);
+  }, 10);
+}
+
 /* event handling */
 document.addEventListener('keydown', (e) => {
   switch (e.keyCode) {
@@ -208,6 +245,10 @@ document.addEventListener('keydown', (e) => {
 
     case 38:
       changeDirection();
+      break;
+
+    case 32:
+      dropBlock();
       break;
 
     default:
