@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>퍼즐게임</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- script를 상단에 넣게 되면 DOM을 관리 할 때 script가 먼저 로딩이 되고 랜더링이 되기 때문에 작동하지 않을 수도 있다. -->
+    <!-- 위에 입력할 경우에는 async, defer 같은 속성을 통해서 해결할 수 있다. -->
+    <!-- <script src="main.js"></script> -->
   </head>
   <body>
     <div class="wrap-all">
@@ -13,7 +17,7 @@
       <ul class="image-container">
         <!-- li*16 -->
         <!-- li 16개 만들기 -->
-        <li class="list0"></li>
+        <!-- <li class="list0"></li>
         <li class="list1"></li>
         <li class="list2"></li>
         <li class="list3"></li>
@@ -28,10 +32,11 @@
         <li></li>
         <li></li>
         <li></li>
-        <li></li>
+        <li></li> -->
       </ul>
       <button class="start-button">Start</button>
       <p class="game-text">Completed!</p>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
