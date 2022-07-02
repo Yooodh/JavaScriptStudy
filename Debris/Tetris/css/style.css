@@ -36,6 +36,8 @@ body {
   background-color: salmon;
   border: none;
   cursor: pointer;
+  margin-top: 10px;
+  border-radius: 8px;
 }
 
 .score {
