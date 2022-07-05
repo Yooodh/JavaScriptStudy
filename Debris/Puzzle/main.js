@@ -7,9 +7,15 @@ const tileCount = 16;
 
 let tiles = [];
 
+const dragged = {
+  el: null,
+  class: null,
+  index: null,
+};
+
 setGame();
 
-// function
+// functions
 function setGame() {
   // 컨테이너 초기화
   container.innerHTML = '';
@@ -91,14 +97,39 @@ function shuffle(array) {
 
 // events
 container.addEventListener('dragstart', (e) => {
-  console.log(e);
+  const obj = e.target;
+  dragged.el = obj;
+  dragged.class = obj.className;
+  // console.log(typeof e.target.parentNode.children)
+  dragged.index = [...obj.parentNode.children].indexOf(obj);
 });
 
 container.addEventListener('dragover', (e) => {
   e.preventDefault();
-  console.log('over');
 });
 
 container.addEventListener('drop', (e) => {
-  console.log('dropped');
+  const obj = e.target;
+  // console.log({ obj });
+
+  if (obj.className !== dragged.class) {
+    let originPlace;
+    let isLast = false;
+
+    // console.log({ obj });
+
+    if (dragged.el.nextSibling) {
+      originPlace = dragged.el.nextSibling;
+    } else {
+      originPlace = dragged.el.previousSibling;
+      isLast = true;
+    }
+
+    obj.before(dragged.el);
+    const droppedIndex = [...obj.parentNode.children].indexOf(obj);
+    dragged.index > droppedIndex
+      ? obj.before(dragged.el)
+      : obj.after(dragged.el);
+    isLast ? originPlace.after(obj) : originPlace.before(obj);
+  }
 });
