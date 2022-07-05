@@ -9,7 +9,11 @@ let tiles = [];
 
 setGame();
 
+// function
 function setGame() {
+  // 컨테이너 초기화
+  container.innerHTML = '';
+
   tiles = createImageTiles();
 
   tiles.forEach((tile) => container.appendChild(tile));
@@ -43,6 +47,9 @@ function createImageTiles() {
 
       // li에 data type 넣기
       li.setAttribute('data-index', i);
+
+      // li에 draggable HTML속성 넣어주기
+      li.setAttribute('draggable', 'true');
 
       // li에 class 넣기
       // li.classList.add('list' + i);
@@ -81,3 +88,17 @@ function shuffle(array) {
   }
   return array;
 }
+
+// events
+container.addEventListener('dragstart', (e) => {
+  console.log(e);
+});
+
+container.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  console.log('over');
+});
+
+container.addEventListener('drop', (e) => {
+  console.log('dropped');
+});
