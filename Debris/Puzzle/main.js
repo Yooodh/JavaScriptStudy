@@ -13,12 +13,40 @@ const dragged = {
   index: null,
 };
 
+let isPlaying = false;
+
+let timeInterval = null;
+
+let time = 0;
+
 setGame();
 
 // functions
+function checkStatus() {
+  const currrentList = [...container.children];
+  const unMatchedList = currrentList.filter(
+    (child, index) => Number(child.getAttribute('data-index')) !== index
+  );
+  if (unMatchedList.length === 0) {
+    // game finish
+    gameText.style.display = 'block';
+    isPlaying = false;
+
+    clearInterval(timeInterval);
+  }
+}
+
 function setGame() {
+  isPlaying = 'true';
+
+  time = 0;
+
   // 컨테이너 초기화
   container.innerHTML = '';
+
+  gameText.style.display = 'none';
+
+  clearInterval(timeInterval);
 
   tiles = createImageTiles();
 
@@ -35,7 +63,11 @@ function setGame() {
     // 타일을 무작위로 섞어준다.
     // shuffle(arr) : 배열의 요소를 무작위로 섞어준다.
     shuffle(tiles).forEach((tile) => container.appendChild(tile));
-  }, 2000);
+    timeInterval = setInterval(() => {
+      playTime.innerText = time;
+      time++;
+    }, 1000);
+  }, 5000);
 }
 
 function createImageTiles() {
@@ -97,6 +129,7 @@ function shuffle(array) {
 
 // events
 container.addEventListener('dragstart', (e) => {
+  if (!isPlaying) return;
   const obj = e.target;
   dragged.el = obj;
   dragged.class = obj.className;
@@ -109,6 +142,7 @@ container.addEventListener('dragover', (e) => {
 });
 
 container.addEventListener('drop', (e) => {
+  if (!isPlaying) return;
   const obj = e.target;
   // console.log({ obj });
 
@@ -124,12 +158,15 @@ container.addEventListener('drop', (e) => {
       originPlace = dragged.el.previousSibling;
       isLast = true;
     }
-
-    obj.before(dragged.el);
     const droppedIndex = [...obj.parentNode.children].indexOf(obj);
     dragged.index > droppedIndex
       ? obj.before(dragged.el)
       : obj.after(dragged.el);
     isLast ? originPlace.after(obj) : originPlace.before(obj);
   }
+  checkStatus();
+});
+
+startButton.addEventListener('click', () => {
+  setGame();
 });
