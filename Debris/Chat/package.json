@@ -1,7 +1,7 @@
 {
   "name": "chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "<li>Node.js (express)</li>\r <li>Socket.io</li>\r <li>Vanilla javascript</li>\r <li>Flex</li>\r <li>ngrok</li>",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "moment": "^2.29.4",
+    "socket.io": "^4.5.1",
     "soket.io": "^0.0.1-security"
   }
 }
