@@ -18,10 +18,8 @@ io.on('connection', (socket) => {
   // 서버에서 받아주기
   // socket.on('채팅아이디', 실행할 함수)
   socket.on('chatting', (data) => {
-    console.log(data);
-
     // 메세지 되돌려주기
-    io.emit('chatting', `그래 반가워 ${data}`);
+    io.emit('chatting', data);
   });
 });
 
