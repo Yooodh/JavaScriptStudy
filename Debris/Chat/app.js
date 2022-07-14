@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const server = http.createServer(app);
 const socketIO = require('socket.io');
+const moment = require('moment');
 
 const io = socketIO(server);
 
@@ -18,8 +19,16 @@ io.on('connection', (socket) => {
   // 서버에서 받아주기
   // socket.on('채팅아이디', 실행할 함수)
   socket.on('chatting', (data) => {
+    const { name, msg } = data;
     // 메세지 되돌려주기
-    io.emit('chatting', data);
+    io.emit('chatting', {
+      // name: name,
+      name,
+      // msg: msg,
+      msg,
+      // time: time,
+      time: moment(new Date()).format('h:ss A'),
+    });
   });
 });
 
