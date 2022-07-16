@@ -1,3 +1,3 @@
 ### :bookmark_tabs:&nbsp;Pages&nbsp;:bookmark_tabs:
 
-![캡처](https://user-images.githubusercontent.com/93702328/179370247-fa238b69-3549-4e40-84ef-518e718acb03.PNG)
+![ezgif-2-f99e76452a](https://user-images.githubusercontent.com/93702328/179371295-5bc8476b-f7d3-4d3e-8272-f7f688bc4120.gif)
