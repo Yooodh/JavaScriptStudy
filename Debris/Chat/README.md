@@ -1,4 +1,4 @@
-# 채팅앱
+# 웹 채팅
 
 ### :bookmark_tabs:&nbsp;Pages&nbsp;:bookmark_tabs:
 
