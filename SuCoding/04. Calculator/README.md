@@ -2,4 +2,4 @@
 
 ### :bookmark_tabs:&nbsp;Pages&nbsp;:bookmark_tabs:
 
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/93702328/180708288-8f165bec-db6b-4e48-8521-2351638bb725.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/93702328/181738521-86160760-0b3b-44a7-9b85-d3d8e77c45a4.gif)
