@@ -57,6 +57,6 @@ body {
 }
 
 .loading {
-  background: #fff;
+  background: #ccc;
   cursor: not-allowed;
 }
