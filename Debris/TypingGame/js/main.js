@@ -1,5 +1,5 @@
 // 사용변수
-const GAME_TIME = 3;
+const GAME_TIME = 9;
 
 let score = 0;
 let time = GAME_TIME;
@@ -9,14 +9,9 @@ let checkInterval;
 let words = [];
 
 const wordInput = document.querySelector('.word-input');
-// console.log(wordInput);
-
 const wordDisplay = document.querySelector('.word-display');
-
 const scoreDisplay = document.querySelector('.score');
-
 const timeDisplay = document.querySelector('.time');
-
 const button = document.querySelector('.button');
 
 init();
@@ -25,11 +20,14 @@ function init() {
   getWords();
 
   // wordInput.addEventListener('이벤트','기능')
-  wordInput.addEventListener('Input', checkMatch);
+  wordInput.addEventListener('input', checkMatch);
 }
 
 // 게임 실행
 function run() {
+  if (isPlaying) {
+    return;
+  }
   isPlaying = true;
   time = GAME_TIME;
   wordInput.focus();
