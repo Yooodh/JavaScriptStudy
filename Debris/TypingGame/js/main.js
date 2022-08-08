@@ -17,6 +17,7 @@ const button = document.querySelector('.button');
 init();
 
 function init() {
+  buttonChange('게임로딩중...');
   getWords();
 
   // wordInput.addEventListener('이벤트','기능')
@@ -46,7 +47,21 @@ function checkStatus() {
 
 // 단어 불러오기
 function getWords() {
-  words = ['Hello', 'Banana', 'Apple', 'Cherry'];
+  axios
+    .get('https://random-word-api.herokuapp.com/word?number=100')
+    .then(function (response) {
+      // handle success
+      response.data.forEach((word) => {
+        if (word.length < 10) {
+          words.push(word);
+        }
+      });
+      buttonChange('게임시작');
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
   buttonChange('게임시작');
 }
 
