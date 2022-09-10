@@ -1,1 +1,1 @@
-# Vinilla JS 미니 프로젝트
+# Vanilla JS 미니 프로젝트
