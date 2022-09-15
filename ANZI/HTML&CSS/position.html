@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <style>
+      div {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+
+      #wrapper {
+        margin-left: 100px;
+
+        /* 자식요소를 가둘 수 있다 */
+        position: relative;
+        height: auto;
+        border: 10px solid green;
+      }
+      #one {
+        background-color: yellow;
+
+        position: fixed;
+        right: 30px;
+        top: 0px;
+      }
+
+      #two {
+        background-color: blue;
+
+        position: absolute;
+        left: 12px;
+        top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="one">1</div>
+      <div id="two">2</div>
+      <div id="three">3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+    <!--     
+    posititon
+
+    static (default)
+    relative : 영역을 두고 그 자리를 기준으로 이동
+    absolute : 부모 요소가 가로막지 않는다면 영역을 벗어나 설정한 값만큼 좌표 이동 (절대좌표)
+    fixed : 부모 요소가 어떠한 속성을 가지고 있더라도 영역을 벗어나 설정한 값만큼 좌표 이동, 스크롤따라 고정된 상태로 이동 (document의 절대좌표)
+    -->
+  </body>
+</html>
