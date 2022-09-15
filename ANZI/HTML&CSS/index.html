@@ -34,8 +34,30 @@
         margin-bottom: 85px;
       }
 
-      p {
-        line-height: 14px;
+      #circle-wrapper {
+      }
+
+      .circle {
+        width: 246px;
+        height: 246px;
+        border-radius: 50%;
+      }
+
+      .circle:first-child {
+        background-color: transparent;
+        border: 1px solid black;
+        opacity: 0.2; /* 20% */
+
+        /* border 안쪽으로 그리기 */
+        /* box-sizing: border-box;*/
+      }
+
+      .circle:nth-child(2) {
+        background-color: #ffc000;
+      }
+
+      .circle:last-child {
+        background-color: #fedd15;
       }
     </style>
   </head>
@@ -56,10 +78,10 @@
       </p>
     </div>
     <!-- 원 -->
-    <div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+    <div id="circle-wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
     </div>
     <!-- 뱃지 -->
     <div>
