@@ -18,6 +18,10 @@
         overflow-x: hidden;
       }
 
+      h1 {
+        margin: 0;
+      }
+
       .text-area {
         margin-top: 90px;
         margin-left: 24px;
@@ -27,6 +31,17 @@
         font-size: 30px;
         line-height: 1;
         font-weight: normal;
+        margin-bottom: 22px;
+      }
+
+      .line {
+        width: 46px;
+        height: 1px;
+        display: inline-block;
+        position: relative;
+        top: -7px;
+        background-color: #ffe6cf;
+        opacity: 0.2;
       }
 
       .volume {
@@ -79,6 +94,7 @@
         position: fixed;
         top: 0;
         right: 24px;
+        font-weight: bold;
 
         /* padding 안쪽으로 넓히기 */
         box-sizing: border-box;
@@ -91,7 +107,9 @@
       <h1>
         <div class="volume">vol. 4</div>
         <div class="title">
-          Classics <br />
+          Classics
+          <div class="line"></div>
+          <br />
           never <br />
           get old
         </div>
