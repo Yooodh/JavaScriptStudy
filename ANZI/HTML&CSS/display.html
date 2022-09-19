@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display</title>
+    <style>
+      #one {
+        background-color: red;
+        margin-top: 100px;
+        margin-right: 30px;
+        display: inline-block;
+      }
+      #two {
+        background-color: blue;
+      }
+      /* inline상태에서는 margin top bottom 적용 안됨 */
+    </style>
+  </head>
+  <body>
+    <!-- span 태그는 기본적으로 inline의 속성을 가지고 있다. -->
+    <span id="one">Web page 문서규격</span>
+    <span id="two">내용</span>
+    <!-- 
+    display
+
+    block 
+    inline : 글 줄을 유지 하면서 자기 속성을 가지고 있다.
+    inline-block : inline을 유지한 상태에서 block의 속성들을 활용할 수 있다.
+    -->
+  </body>
+</html>
