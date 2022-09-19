@@ -6,12 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>issue</title>
     <link rel="stylesheet" href="main.css" />
+    <style>
+      .featured {
+        height: 310px;
+        background-color: black;
+        position: relative;
+        background-image: url('img/issue-1.jpg');
+        background-size: cover;
+      }
+
+      .count {
+        position: absolute;
+        top: 36px;
+        right: 26px;
+      }
+
+      .text-area {
+        position: absolute;
+        bottom: 36px;
+        left: 24px;
+      }
+
+      .featured .title {
+        margin-bottom: 12px;
+      }
+
+      sup {
+        font-size: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="featured">
-      <div class="count">8</div>
+      <h1 class="count">8</h1>
       <div class="text-area">
-        <h1 class="title">Issues 1</h1>
+        <h1 class="title">Issues <sup>1</sup></h1>
         <p>
           We'll make a mobile magazine <br />
           using html, css only.
@@ -20,9 +49,9 @@
     </div>
 
     <ul class="swiper">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
+      <li><img src="img/issue-2.jpg" alt="" /></li>
+      <li><img src="img/issue-3.jpg" alt="" /></li>
+      <li><img src="img/issue-4.jpg" alt="" /></li>
     </ul>
 
     <!-- ol : ordered list, ul : unordered list -->
