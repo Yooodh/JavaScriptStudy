@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mypage</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      /* 헤더 */
+      header {
+        text-align: center;
+      }
+
+      header .thumb {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+      }
+
+      header .thumb-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 36px;
+      }
+
+      header .badge {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+        position: absolute;
+        background-color: red;
+        border-radius: 50%;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header .greeting {
+        margin-bottom: 10px;
+      }
+
+      header .mail {
+        padding: 8px 22px 10px 22px;
+        background-color: rgba(0, 0, 0, 0.05);
+        display: inline-block;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-sizing: border-box;
+        margin-top: 18px;
+      }
+
+      /* 리스트 */
+      .list {
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="thumb-wrapper">
+        <img class="thumb" src="img/user-thumb.png" />
+        <div class="badge">7</div>
+      </div>
+
+      <div class="text-area">
+        <h2 class="greeting">Hi, Mary Jane</h2>
+        <div class="desc">
+          We'll make a mobile magazine <br />
+          using html, css only.
+        </div>
+      </div>
+
+      <div class="mail">anjihhg@gmail.com</div>
+    </header>
+
+    <ul class="list">
+      <li class="item">
+        <div class="left">
+          <img src="img/icon/bookmark.svg" />
+          <div class="name">Bookmark</div>
+        </div>
+        <div class="right">
+          <img src="img/icon/right_arrow.svg" alt="" />
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="left">
+          <img src="img/icon/account.svg" />
+          <div class="name">Account info</div>
+        </div>
+        <div class="right">
+          <img src="img/icon/right_arrow.svg" alt="" />
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="left">
+          <img src="img/icon/business.svg" />
+          <div class="name">Business</div>
+        </div>
+        <div class="right">
+          <img src="img/icon/right_arrow.svg" alt="" />
+        </div>
+      </li>
+
+      <li class="item">
+        <div class="left">
+          <img src="img/icon/puzzle.svg" />
+          <div class="name">Blah Blah</div>
+        </div>
+        <div class="right">
+          <img src="img/icon/right_arrow.svg" alt="" />
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
