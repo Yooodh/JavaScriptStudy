@@ -72,8 +72,8 @@
       }
 
       /* Pseudo element */
-      .item:after {
-        /* Pseudo element를 적용하려면 반드시 content를 ''라도 사용해야 한다. */
+      /* .item:after {
+        Pseudo element를 적용하려면 반드시 content를 ''라도 사용해야 한다.
         content: '';
         width: 100%;
         height: 100%;
@@ -81,15 +81,15 @@
         left: 0;
         top: 0;
         transition: 0.2s;
-      }
+      } */
 
-      .item:hover:after {
+      /* .item:hover:after {
         background-color: rgba(0, 0, 0, 0.5);
-      }
+      } */
 
-      .item:active:after {
+      /* .item:active:after {
         background-color: rgba(0, 0, 0, 0.2);
-      }
+      } */
 
       /* 리스트 시작 */
       .item .num {
@@ -104,9 +104,6 @@
       }
 
       /* 리스트 설명 */
-      .item .infos {
-      }
-
       .item .title {
         font-size: 17px;
       }
@@ -130,16 +127,16 @@
     </div>
 
     <ul class="swiper">
-      <li></li>
-      <li></li>
-      <li></li>
+      <li class="mouse-effect"></li>
+      <li class="mouse-effect"></li>
+      <li class="mouse-effect"></li>
     </ul>
 
     <!-- ol : ordered list, ul : unordered list -->
     <!-- li : list item -->
 
     <ul class="list">
-      <li class="item">
+      <li class="item mouse-effect">
         <div class="num">1</div>
         <div class="infos">
           <div class="title">Hello World</div>
@@ -149,7 +146,7 @@
           </div>
         </div>
       </li>
-      <li class="item">
+      <li class="item mouse-effect">
         <div class="num">2</div>
         <div class="infos">
           <div class="title">Hello World</div>
@@ -159,7 +156,7 @@
           </div>
         </div>
       </li>
-      <li class="item">
+      <li class="item mouse-effect">
         <div class="num">3</div>
         <div class="infos">
           <div class="title">Hello World</div>
