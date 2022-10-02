@@ -115,4 +115,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.3;
+}
+
+.gnb .active {
+  opacity: 1;
 }
