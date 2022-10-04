@@ -17,10 +17,17 @@
         }
       }
 
+      #parent {
+        /* 3D 공간효과 */
+        perspective: 200px;
+      }
+
       #element {
+        margin: 0 auto;
         width: 100px;
         height: 100px;
         transition: 1s;
+        background-color: red;
         /* animation-name: show;
         animation-duration: 3s;
         animation-fill-mode: forwards; */
@@ -29,10 +36,20 @@
 
       #element:hover {
         background-color: blue;
+        /* transform: translateZ(100px) translateY(100px) scaleX(2); 
+        transform: rotateZ(360deg); 
+        transform: translate(10px, 30px); 
+        transform: scale(2); 
+        transform: rotateX(30deg);
+        transform: rotateY(60deg); 
+        transform: translate3d(30px, 100px, 50px); 
+        transform: scale3d(1.5, 1.5, 1); 
+        transform: skewX(20deg); 
+        transform: skewY(20deg); */
       }
     </style>
   </head>
   <body>
-    <div id="element"></div>
+    <div id="parent"><div id="element"></div></div>
   </body>
 </html>
