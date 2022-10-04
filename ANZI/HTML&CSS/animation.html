@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation</title>
+    <link rel="stylesheet" href="main.css" />
+    <style>
+      @keyframes show {
+        from {
+          background-color: yellow;
+        }
+
+        to {
+          background-color: green;
+        }
+      }
+
+      #element {
+        width: 100px;
+        height: 100px;
+        transition: 1s;
+        /* animation-name: show;
+        animation-duration: 3s;
+        animation-fill-mode: forwards; */
+        animation: show 3s forwards;
+      }
+
+      #element:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="element"></div>
+  </body>
+</html>
