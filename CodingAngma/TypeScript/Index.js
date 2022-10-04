@@ -10,11 +10,11 @@
 // 코드 작성시간은 길어지겠지만 초기에 생각을 많이 해서 코드를 짜준다면 안정적이고 빠르게 작업을 진행할 수 있는 장점이 있다.
 
 function add(num1, num2) {
-    console.log(num1 + num2);
+  console.log(num1 + num2);
 }
 
 // 아무 인수도 전달하지 않아서 undefined가 됐고
-// undefined와 undefined를 더하니 NaN이 나온다. 
+// undefined와 undefined를 더하니 NaN이 나온다.
 add(); // NaN
 
 // 1과 undefined를 더했으니 NaN이 나온다.
@@ -32,9 +32,9 @@ add('hello', 'world'); // "helloworld"
 
 // showItems는 배열을 받아서 루프를 돌면서 보여주는 함수이다.
 function showItems(arr) {
-    arr.forEach((item) => {
-        console.log(item);
-    });
+  arr.forEach((item) => {
+    console.log(item);
+  });
 }
 
 // 배열은 잘 전달한다.
