@@ -8,12 +8,31 @@
     <link rel="stylesheet" href="main.css" />
     <style>
       @keyframes show {
-        from {
-          background-color: yellow;
+        /* from {
+          opacity: 0;
+          transform: translateX(0);
         }
 
         to {
-          background-color: green;
+          opacity: 1;
+          transform: translateX(100px);
+        } */
+
+        0% {
+          transform: translateX(0);
+        }
+
+        30% {
+          background-color: yellow;
+        }
+
+        50% {
+          background-color: aqua;
+          transform: translateX(0) scale(2);
+        }
+
+        100% {
+          transform: translateX(100px) scale(1);
         }
       }
 
@@ -26,12 +45,23 @@
         margin: 0 auto;
         width: 100px;
         height: 100px;
-        transition: 1s;
+        transition: 0.35s;
         background-color: red;
         /* animation-name: show;
         animation-duration: 3s;
         animation-fill-mode: forwards; */
-        animation: show 3s forwards;
+        animation: show 10s;
+        /* animation-delay: 1s; */
+        animation-fill-mode: both;
+
+        /* easyOutExpo */
+        /* animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1); */
+
+        /* 애니메이션 반복 */
+        animation-iteration-count: infinite;
+
+        /* 애니메이션 왕복 */
+        animation-direction: alternate;
       }
 
       #element:hover {
