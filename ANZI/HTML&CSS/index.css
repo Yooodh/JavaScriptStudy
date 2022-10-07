@@ -1,3 +1,39 @@
+@keyframes circleShow1 {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes circleShow2 {
+  from {
+    opacity: 0;
+    transform: translateX(-86px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes circleShow3 {
+  from {
+    opacity: 0;
+    transform: translateX(-172px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .text-area {
   margin-top: 90px;
   margin-left: 24px;
@@ -25,6 +61,7 @@
   position: relative;
   margin-left: 24px;
   margin-top: 42px;
+  height: 246px;
 }
 
 .circle {
@@ -32,27 +69,35 @@
   height: 246px;
   border-radius: 50%;
   position: absolute;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .circle:first-child {
   background-color: transparent;
-  border: 1px solid black;
-  opacity: 0.2; /* 20% */
+  border: 1px solid rgba(0, 0, 0, 0.3);
 
   /* border 안쪽으로 그리기 */
   box-sizing: border-box;
+  animation: circleShow1 1s;
+  animation-fill-mode: both;
+  animation-delay: 0s;
 }
 
 .circle:nth-child(2) {
   background-color: #ffc000;
   left: 82px;
+  animation: circleShow2 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.2s;
 }
 
 .circle:last-child {
   background-color: #fedd15;
   left: 164px;
-  transition: 1s;
   top: 0;
+  animation: circleShow3 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.3s;
 }
 
 /* .circle:hover {
