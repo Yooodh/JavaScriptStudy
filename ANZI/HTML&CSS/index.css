@@ -41,6 +41,15 @@
 
 .text-area h1 {
   margin-bottom: 22px;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: showText 0.5s;
+}
+
+.desc {
+  animation: showText 0.5s;
+  animation-delay: 0.12s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: both;
 }
 
 .line {
@@ -127,4 +136,7 @@
 
   /* padding 안쪽으로 넓히기 */
   box-sizing: border-box;
+  animation: slideDown 0.5s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
 }
