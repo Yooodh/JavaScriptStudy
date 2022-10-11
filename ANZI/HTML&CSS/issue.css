@@ -16,6 +16,7 @@
   position: absolute;
   bottom: 36px;
   left: 24px;
+  animation: showText 1s;
 }
 
 .featured .title {
