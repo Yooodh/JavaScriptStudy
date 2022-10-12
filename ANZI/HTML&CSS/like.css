@@ -1,6 +1,9 @@
 .search {
   margin: 20px;
   position: relative;
+  animation: slideDown 0.5s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
 }
 
 .search form {

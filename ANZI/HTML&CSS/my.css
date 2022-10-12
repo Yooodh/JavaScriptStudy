@@ -8,6 +8,7 @@ header .thumb {
   width: 92px;
   height: 92px;
   border-radius: 50%;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1), 0 12px 24px 0 rgba(0, 0, 0, 0.24);
 }
 
 header .thumb-wrapper {
@@ -28,6 +29,12 @@ header .badge {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* animation */
+  animation: scaleUp 0.5s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
 }
 
 header .greeting {
