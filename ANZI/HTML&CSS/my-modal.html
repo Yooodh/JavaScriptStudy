@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my page</title>
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="animaiton.css" />
     <style>
       /* 헤더 */
       header {
@@ -103,6 +104,17 @@
         width: calc(100% - 48px);
         background-color: #485861;
         border-radius: 12px;
+        overflow: hidden;
+        animation: showPopup 0.75s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .modal-inner .thumb {
+        height: 234px;
+        background-color: aliceblue;
+        background-image: url('img/likes-3.jpg');
+        background-size: cover;
+        background-position: center;
       }
 
       .modal-inner .title {
@@ -139,6 +151,8 @@
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.7);
+        animation: fadeIn 0.5s;
+        animation-fill-mode: both;
       }
     </style>
   </head>
@@ -150,18 +164,18 @@
       </div>
 
       <div class="text-area">
-        <h2 class="greeting stagger-item">Hi, Mary Jane</h2>
-        <div class="desc stagger-item">
+        <h2 class="greeting">Hi, Mary Jane</h2>
+        <div class="desc">
           We'll make a mobile magazine <br />
           using html, css only.
         </div>
       </div>
 
-      <div class="mail mouse-effect stagger-item"><a>anjihhg@gmail.com</a></div>
+      <div class="mail mouse-effect"><a>anjihhg@gmail.com</a></div>
     </header>
 
     <ul class="list">
-      <li class="item mouse-effect stagger-item">
+      <li class="item mouse-effect">
         <div class="left">
           <img src="img/icon/bookmark.svg" />
           <div class="name">Bookmark</div>
@@ -171,7 +185,7 @@
         </div>
       </li>
 
-      <li class="item mouse-effect stagger-item">
+      <li class="item mouse-effect">
         <div class="left">
           <img src="img/icon/account.svg" />
           <div class="name">Account info</div>
@@ -181,7 +195,7 @@
         </div>
       </li>
 
-      <li class="item mouse-effect stagger-item">
+      <li class="item mouse-effect">
         <div class="left">
           <img src="img/icon/business.svg" />
           <div class="name">Business</div>
@@ -191,7 +205,7 @@
         </div>
       </li>
 
-      <li class="item mouse-effect stagger-item">
+      <li class="item mouse-effect">
         <div class="left">
           <img src="img/icon/puzzle.svg" />
           <div class="name">Blah Blah</div>
@@ -201,21 +215,6 @@
         </div>
       </li>
     </ul>
-
-    <div class="overlay"></div>
-    <div class="modal-wrapper">
-      <div class="modal-inner">
-        <div class="thumb"></div>
-        <div class="bottom-info">
-          <div class="title">Dear, Designers.</div>
-          <p class="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. It has been the industry's standard.
-          </p>
-          <button>Close</button>
-        </div>
-      </div>
-    </div>
 
     <!-- 네비게이션 -->
     <nav class="gnb">
@@ -232,5 +231,21 @@
         <img src="img/icon/more.svg" alt="" />
       </a>
     </nav>
+
+    <div class="overlay"></div>
+
+    <div class="modal-wrapper">
+      <div class="modal-inner">
+        <div class="thumb"></div>
+        <div class="bottom-info">
+          <div class="title">Dear, Designers.</div>
+          <p class="description">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. It has been the industry's standard.
+          </p>
+          <a href="my.html"><button>Close</button></a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
