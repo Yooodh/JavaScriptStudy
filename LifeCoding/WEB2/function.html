@@ -13,7 +13,7 @@
       //   return 반환값
       // }
 
-      function numbering() {
+      function numbering1() {
         document.write(1 + '<br/>');
       }
 
@@ -66,6 +66,33 @@
 
       console.log(get_arguments(10, 20));
       console.log(get_arguments(20, 30));
+
+      numbering = function () {
+        i = 0;
+        while (i < 10) {
+          document.write(i);
+          i += 1;
+        }
+      };
+
+      // function numbering() {
+      //   i = 0;
+      //   while (i < 10) {
+      //     document.write(i);
+      //     i += 1;
+      //   }
+      // }
+
+      // 정의 된 함수 바로 호출(익명함수)
+      // (function () {
+      //   i = 0;
+      //   while (i < 10) {
+      //     document.write(i);
+      //     i += 1;
+      //   }
+      // })();
+
+      numbering();
     </script>
   </body>
 </html>
