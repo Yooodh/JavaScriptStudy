@@ -32,13 +32,23 @@
       document.write(get_member3());
 
       function get_members() {
-        return ['egoing', 'k8805', 'sorialgi'];
+        return ['egoing', 'k8805', 'sorialgi', 'leezche'];
       }
 
       let members = get_members();
       document.write(members[0] + '<br/>');
       document.write(members[1] + '<br/>');
       document.write(members[2] + '<br/>');
+
+      document.write(members[0].toUpperCase() + '<br/>');
+      document.write(members[1].toUpperCase() + '<br/>');
+      document.write(members[2].toUpperCase() + '<br/>');
+
+      console.log(members.length);
+
+      for (let i = 0; i < members.length; i++) {
+        document.write(members[i].toUpperCase() + '<br/>');
+      }
     </script>
   </body>
 </html>
