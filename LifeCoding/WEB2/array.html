@@ -49,6 +49,36 @@
       for (let i = 0; i < members.length; i++) {
         document.write(members[i].toUpperCase() + '<br/>');
       }
+
+      let li = ['a', 'b', 'c', 'd', 'e'];
+
+      // 배열의 첫번째 원소 제거
+      li.shift();
+      console.log(li);
+
+      // 배열 끝점의 원소 제거
+      li.pop();
+      console.log(li);
+
+      // 정렬
+      let li2 = ['c', 'e', 'a', 'b', 'd'];
+      li2.sort();
+      console.log(li2);
+
+      li2.reverse();
+      console.log(li2);
+
+      function sortNumber(a, b) {
+        return a - b;
+      }
+      let numbers = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+      console.log(numbers.sort(sortNumber));
+
+      function sortNumber2(a, b) {
+        return b - a;
+      }
+      let numbers2 = [20, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+      console.log(numbers2.sort(sortNumber2));
     </script>
   </body>
 </html>
