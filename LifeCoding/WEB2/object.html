@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>object</title>
+  </head>
+  <body>
+    <script>
+      let grades = { egoing: 10, k8805: 6, sorialgi: 80 };
+      console.log(grades);
+      console.log(grades['sorialgi']);
+      console.log(grades.k8805);
+      console.log(grades['k88' + '05']);
+
+      let grades2 = {};
+      grades2['egoing'] = 10;
+      grades2['k8805'] = 6;
+      grades2['sorialgi'] = 80;
+      console.log(grades2);
+
+      let grades3 = new Object();
+      grades3['egoing'] = 10;
+      grades3['k8805'] = 6;
+      grades3['sorialgi'] = 80;
+      console.log(grades3);
+    </script>
+  </body>
+</html>
