@@ -7,24 +7,40 @@
     <title>object</title>
   </head>
   <body>
-    <script>
-      let grades = { egoing: 10, k8805: 6, sorialgi: 80 };
-      console.log(grades);
-      console.log(grades['sorialgi']);
-      console.log(grades.k8805);
-      console.log(grades['k88' + '05']);
+    <ul>
+      <script>
+        let grades = { egoing: 10, k8805: 6, sorialgi: 80 };
+        console.log(grades);
+        console.log(grades['sorialgi']);
+        console.log(grades.k8805);
+        console.log(grades['k88' + '05']);
 
-      let grades2 = {};
-      grades2['egoing'] = 10;
-      grades2['k8805'] = 6;
-      grades2['sorialgi'] = 80;
-      console.log(grades2);
+        for (let name in grades) {
+          document.write('<li> key : ' + name + ' value :' + grades[name]);
+        }
 
-      let grades3 = new Object();
-      grades3['egoing'] = 10;
-      grades3['k8805'] = 6;
-      grades3['sorialgi'] = 80;
-      console.log(grades3);
-    </script>
+        let grades2 = {};
+        grades2['egoing'] = 10;
+        grades2['k8805'] = 6;
+        grades2['sorialgi'] = 80;
+        console.log(grades2);
+
+        let grades3 = new Object();
+        grades3['egoing'] = 10;
+        grades3['k8805'] = 6;
+        grades3['sorialgi'] = 80;
+        console.log(grades3);
+
+        let arr = ['a', 'b', 'c'];
+        for (let i = 0; i < arr.length; i++) {
+          console.log(arr[i]);
+        }
+
+        let arr2 = ['a', 'b', 'c'];
+        for (let name in arr2) {
+          console.log(arr[name]);
+        }
+      </script>
+    </ul>
   </body>
 </html>
