@@ -16,7 +16,9 @@
         console.log(grades['k88' + '05']);
 
         for (let name in grades) {
-          document.write('<li> key : ' + name + ' value :' + grades[name]);
+          document.write(
+            '<li> key : ' + name + ' value :' + grades[name] + '<br/>'
+          );
         }
 
         let grades2 = {};
@@ -40,6 +42,17 @@
         for (let name in arr2) {
           console.log(arr[name]);
         }
+
+        let grades4 = {
+          list: { egoing: 10, k8805: 6, sorialgi: 80 },
+          show: function () {
+            for (let name in this.list) {
+              document.write(name + ':' + this.list[name] + '<br/>');
+            }
+          },
+        };
+
+        grades4.show();
       </script>
     </ul>
   </body>
