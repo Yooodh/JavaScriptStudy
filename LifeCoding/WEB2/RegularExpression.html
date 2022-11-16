@@ -10,8 +10,23 @@
     네이버 : <a href="http://naver.com">http://naver.com</a>입니다.
     <script>
       let str = 'a';
+
       let pattern = /a/;
+      // 추출
+      console.log(pattern.exec('abcdef')); // ['a']
+      console.log(pattern.exec('bcdefg')); // null
+
+      // 테스트
+      console.log(pattern.test('abcde')); // true
+      console.log(pattern.test('bcdefg')); // false
+
       let pattern2 = new RegExp('a');
+      console.log(pattern2.exec('abcdef')); // ['a']
+      console.log(pattern2.exec('bcdefg')); // null
+
+      let pattern3 = /a./;
+      console.log(pattern3.exec('abcdef')); // ['ab']
+      console.log(pattern3.exec('bcdefg')); // null
     </script>
   </body>
 </html>
