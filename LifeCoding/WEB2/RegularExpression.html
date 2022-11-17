@@ -12,11 +12,11 @@
       let str = 'a';
 
       let pattern = /a/;
-      // 추출
+      // 정보 추출
       console.log(pattern.exec('abcdef')); // ['a']
       console.log(pattern.exec('bcdefg')); // null
 
-      // 테스트
+      // 정보의 유무 테스트
       console.log(pattern.test('abcde')); // true
       console.log(pattern.test('bcdefg')); // false
 
@@ -27,6 +27,13 @@
       let pattern3 = /a./;
       console.log(pattern3.exec('abcdef')); // ['ab']
       console.log(pattern3.exec('bcdefg')); // null
+
+      let str2 = 'bcdef';
+      console.log(str.match(pattern)); // ['a']
+      console.log(str2.match(pattern)); // null
+
+      let str3 = 'abcdef';
+      console.log(str3.replace(pattern, 'A')); // 'Abcdef'
     </script>
   </body>
 </html>
