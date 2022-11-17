@@ -34,6 +34,21 @@
 
       let str3 = 'abcdef';
       console.log(str3.replace(pattern, 'A')); // 'Abcdef'
+
+      let xi = /a/;
+      console.log('Abcde'.match(xi)); // null
+
+      let oi = /a/i;
+      console.log('Abcde'.match(oi)); // ['A']
+
+      let xg = /a/;
+      console.log('abcdea'.match(xg)); // ['a']
+
+      let og = /a/g;
+      console.log('abcdea'.match(og)); // ['a', 'a']
+
+      let gi = /a/gi;
+      console.log('AabcdAa'.match(gi)); // ['A', 'a', 'A', 'a']
     </script>
   </body>
 </html>
