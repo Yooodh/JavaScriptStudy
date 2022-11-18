@@ -49,6 +49,11 @@
 
       let gi = /a/gi;
       console.log('AabcdAa'.match(gi)); // ['A', 'a', 'A', 'a']
+
+      let pattern4 = /(\w+)\s(\w+)/;
+      let str4 = 'coding everybody';
+      let result = str4.replace(pattern4, '$2, $1');
+      console.log(result);
     </script>
   </body>
 </html>
