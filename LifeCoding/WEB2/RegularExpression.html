@@ -54,6 +54,14 @@
       let str4 = 'coding everybody';
       let result = str4.replace(pattern4, '$2, $1');
       console.log(result);
+
+      let urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+      let content =
+        '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
+      let result2 = content.replace(urlPattern, function (url) {
+        return '<a href="' + url + '">' + url + '</a>';
+      });
+      console.log(result2);
     </script>
   </body>
 </html>
