@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable</title>
+  </head>
+  <body>
+    <script>
+      let vscope = 'global';
+
+      function fscope() {
+        let vscope = 'local';
+        console.log(vscope);
+      }
+
+      function fscope2() {
+        console.log(vscope);
+      }
+
+      fscope();
+      fscope2();
+
+      function fscope3() {
+        let vscope = 'local';
+        let lv = 'local variables';
+        console.log(lv);
+      }
+
+      fscope3();
+      // console.log(lv);
+
+      function fscope4() {
+        let vscope = 'local';
+      }
+
+      fscope4();
+      console.log(vscope);
+
+      function fscope5() {
+        let vscope = 'local';
+        vscope = 'local';
+      }
+
+      fscope5();
+      console.log(vscope);
+
+      function fscope6() {
+        vscope = 'local';
+      }
+
+      fscope6();
+      console.log(vscope);
+    </script>
+  </body>
+</html>
