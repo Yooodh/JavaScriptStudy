@@ -117,7 +117,7 @@
         MYAPP.calculator.right = 10;
 
         function sum() {
-          return MYAPP.calculator.left + MYAPP.calculator.right;
+          return MYAPP.calculator.left + MYAPP.calculator.right + '<br />';
         }
 
         document.write(sum());
@@ -130,6 +130,19 @@
         console.log(name);
       }
       // console.log(name);
+
+      let i = 5;
+
+      function aa() {
+        let i = 10;
+        b();
+      }
+
+      function b() {
+        document.write(i);
+      }
+
+      aa();
     </script>
   </body>
 </html>
