@@ -37,6 +37,37 @@
       //   }
       // }
       // func(num);
+
+      function cal2(mode) {
+        let funcs = {
+          plus: function (left, right) {
+            return left + right;
+          },
+          minus: function (left, right) {
+            return left - right;
+          },
+        };
+        return funcs[mode];
+      }
+      console.log(cal2('plus')(2, 1));
+      console.log(cal2('minus')(2, 1));
+
+      let process = [
+        function (input) {
+          return input + 10;
+        },
+        function (input) {
+          return input * input;
+        },
+        function (input) {
+          return input / 2;
+        },
+      ];
+      let input = 1;
+      for (let i = 0; i < process.length; i++) {
+        input = process[i](input);
+      }
+      console.log(input);
     </script>
   </body>
 </html>
