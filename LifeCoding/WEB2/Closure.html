@@ -16,6 +16,15 @@
         inner();
       }
       outter();
+
+      function outter2() {
+        let title = 'coding everybody';
+        return function () {
+          console.log(title);
+        };
+      }
+      inner = outter2();
+      inner();
     </script>
   </body>
 </html>
