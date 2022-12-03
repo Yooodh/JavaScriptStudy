@@ -35,7 +35,7 @@
             if (typeof _title === 'String') {
               title = _title;
             } else {
-              alert('제목은 문자열이어야 합니다.');
+              // alert('제목은 문자열이어야 합니다.');
             }
           },
         };
@@ -50,6 +50,18 @@
 
       console.log(ghost.get_title());
       console.log(matrix.get_title());
+
+      let arr = [];
+      for (let i = 0; i < 5; i++) {
+        arr[i] = (function (id) {
+          return function () {
+            return id;
+          };
+        })(i);
+      }
+      for (let index in arr) {
+        console.log(arr[index]());
+      }
     </script>
   </body>
 </html>
