@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply</title>
+  </head>
+  <body>
+    <script>
+      function func() {}
+      func();
+
+      function sum(arg1, arg2) {
+        return arg1 + arg2;
+      }
+
+      console.log(sum(1, 2));
+      console.log(sum(4, 2));
+
+      console.log(sum.apply);
+
+      console.log(sum.apply(null, [1, 2]));
+      console.log(sum.apply(null, [4, 2]));
+    </script>
+  </body>
+</html>
