@@ -22,6 +22,23 @@
 
       console.log(sum.apply(null, [1, 2]));
       console.log(sum.apply(null, [4, 2]));
+
+      o1 = { val1: 1, val2: 2, val3: 3 };
+      // o1 = { val1: 1, val2: 2, val3: 3 sum:sum};
+      o2 = { v1: 10, v2: 50, v3: 100, v4: 25 };
+      // o2 = { v1: 10, v2: 50, v3: 100, v4: 25 sum:sum};
+      function sum2() {
+        let _sum = 0;
+        for (name in this) {
+          // if (typeof this[name] !== 'function')
+          _sum += this[name];
+        }
+        return _sum;
+      }
+      console.log(sum2.apply(o1));
+      // console.log(o1.sum());
+      console.log(sum2.apply(o2));
+      // console.log(o2.sum());
     </script>
   </body>
 </html>
