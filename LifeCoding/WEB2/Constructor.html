@@ -10,18 +10,53 @@
     <script>
       let person1 = {};
       person1.name = 'egoing';
-      person1.introcuce = function () {
+      person1.introduce = function () {
         return 'My name is ' + this.name + '<br />';
       };
-      document.write(person1.introcuce());
+      document.write(person1.introduce());
 
       let person2 = {
-        name: 'egoing',
+        name: 'leezche',
         introduce: function () {
-          return 'My name is ' + this.name;
+          return 'My name is ' + this.name + '<br />';
         },
       };
       document.write(person2.introduce());
+
+      function Person1() {}
+      let p = new Person1();
+      p.name = 'egoing';
+      p.introduce = function () {
+        return 'My name is ' + this.name + '<br />';
+      };
+      document.write(p.introduce());
+
+      function Person2() {}
+      let p1 = new Person2();
+      p1.name = 'egoing';
+      p1.introduce = function () {
+        return 'My name is ' + this.name;
+      };
+      document.write(p1.introduce() + '<br/>');
+
+      let p2 = new Person2();
+      p2.name = 'leezche';
+      p2.introduce = function () {
+        return 'My name is ' + this.name;
+      };
+      document.write(p2.introduce() + '<br/>');
+
+      function Person4(name) {
+        this.name = name;
+        this.introduce = function () {
+          return 'My name is ' + this.name;
+        };
+      }
+      let p3 = new Person4('egoing');
+      document.write(p3.introduce() + '<br/>');
+
+      let p4 = new Person4('leezche');
+      document.write(p4.introduce() + '<br/>');
     </script>
   </body>
 </html>
