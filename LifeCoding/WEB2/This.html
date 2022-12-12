@@ -10,10 +10,19 @@
     <script>
       function func() {
         if (window === this) {
-          document.write('window === this');
+          document.write('window === this' + '<br/>');
         }
       }
       func();
+
+      let o = {
+        func: function () {
+          if (o === this) {
+            document.write('o === this');
+          }
+        },
+      };
+      o.func();
     </script>
   </body>
 </html>
