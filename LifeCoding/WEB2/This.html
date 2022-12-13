@@ -41,6 +41,30 @@
       if (funcThis === o2) {
         document.write('o2 <br/>');
       }
+
+      function sum(x, y) {
+        return x + y;
+      }
+      console.log(sum(1, 2));
+
+      let sum2 = new Function('x', 'y', 'return x+y;');
+      console.log(sum2(1, 2));
+
+      // let o3 = {};
+      // let p3 = {};
+      // function func() {
+      //   switch (this) {
+      //     case o3:
+      //       document.write('o <br/>');
+      //       break;
+      //     case p3:
+      //       document.write('p <br/>');
+      //       break;
+      //     case window:
+      //       document.write('window <br/>');
+      //       break;
+      //   }
+      // }
     </script>
   </body>
 </html>
