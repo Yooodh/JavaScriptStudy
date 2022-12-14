@@ -50,21 +50,24 @@
       let sum2 = new Function('x', 'y', 'return x+y;');
       console.log(sum2(1, 2));
 
-      // let o3 = {};
-      // let p3 = {};
-      // function func() {
-      //   switch (this) {
-      //     case o3:
-      //       document.write('o <br/>');
-      //       break;
-      //     case p3:
-      //       document.write('p <br/>');
-      //       break;
-      //     case window:
-      //       document.write('window <br/>');
-      //       break;
-      //   }
-      // }
+      let o3 = {};
+      let p3 = {};
+      function func2() {
+        switch (this) {
+          case o3:
+            document.write('o3 <br/>');
+            break;
+          case p3:
+            document.write('p3 <br/>');
+            break;
+          case window:
+            document.write('window <br/>');
+            break;
+        }
+      }
+      func2();
+      func2.apply(o3);
+      func2.apply(p3);
     </script>
   </body>
 </html>
