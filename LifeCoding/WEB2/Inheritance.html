@@ -28,6 +28,14 @@
 
       let p2 = new Person2('egoing');
       document.write(p2.introduce() + '<br/>');
+
+      function Programmer(name) {
+        this.name = name;
+      }
+      Programmer.prototype = new Person();
+
+      let p3 = new Programmer('egoing');
+      document.write(p3.introduce() + '<br />');
     </script>
   </body>
 </html>
