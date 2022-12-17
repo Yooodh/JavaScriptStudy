@@ -8,34 +8,50 @@
   </head>
   <body>
     <script>
+      // function Person(name) {
+      //   this.name = name;
+      //   this.introduce = function () {
+      //     return 'My name is ' + this.name;
+      //   };
+      // }
+
+      // let p1 = new Person('egoing');
+      // document.write(p1.introduce() + '<br/>');
+
       function Person(name) {
         this.name = name;
-        this.introduce = function () {
-          return 'My name is ' + this.name;
-        };
       }
-
-      let p1 = new Person('egoing');
-      document.write(p1.introduce() + '<br/>');
-
-      function Person2(name) {
-        this.name = name;
-      }
-      Person2.prototype.name = null;
-      Person2.prototype.introduce = function () {
-        return 'My name is ' + this.name;
+      Person.prototype.name = null;
+      Person.prototype.introduce = function () {
+        return 'My nickname is ' + this.name;
       };
 
-      let p2 = new Person2('egoing');
-      document.write(p2.introduce() + '<br/>');
+      // let p2 = new Person('egoing');
+      // document.write(p2.introduce() + '<br/>');
 
       function Programmer(name) {
         this.name = name;
       }
       Programmer.prototype = new Person();
+      Programmer.prototype.coding = function () {
+        return 'hello world';
+      };
+
+      function Designer(name) {
+        this.name = name;
+      }
+      Designer.prototype = new Person();
+      Designer.prototype.design = function () {
+        return 'beautiful';
+      };
 
       let p3 = new Programmer('egoing');
       document.write(p3.introduce() + '<br />');
+      document.write(p3.coding() + '<br />');
+
+      let p4 = new Designer('leezche');
+      document.write(p4.introduce() + '<br/>');
+      document.write(p4.design() + '<br/>');
     </script>
   </body>
 </html>
