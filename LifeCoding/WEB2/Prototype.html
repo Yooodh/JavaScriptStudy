@@ -12,12 +12,19 @@
       Ultra.prototype.ultraProp = true;
 
       function Super() {}
-      Super.prototype = new Ultra();
+      let t = new Ultra();
+      // t.ultraProp = 4;
+      Super.prototype = t;
 
       function Sub() {}
-      Sub.prototype = new Super();
+      let s = new Super();
+      // s.ultraProp = 3;
+      Sub.prototype = s;
+      // Sub.prototype = new Super();
+      // Sub.prototype.ultraProp = 2;
 
       let o = new Sub();
+      // o.ultraProp = 1;
       console.log(o.ultraProp);
 
       function func() {}
