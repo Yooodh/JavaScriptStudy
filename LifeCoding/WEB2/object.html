@@ -68,6 +68,21 @@
 
         let a = new Array(1, 2, 3);
         console.log('a.toString()', a.toString());
+
+        Object.prototype.contain = function (needle) {
+          for (let name in this) {
+            if (this[name] === needle) {
+              return true;
+            }
+          }
+          return false;
+        };
+
+        let ooo = { name: 'egoing', city: 'seoul' };
+        console.log(ooo.contain('graphittie'));
+
+        let aaa = ['egoing', 'leezche', 'grapittie'];
+        console.log(aaa.contain('leezche'));
       </script>
     </ul>
   </body>
