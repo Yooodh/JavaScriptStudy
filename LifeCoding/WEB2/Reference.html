@@ -12,6 +12,16 @@
       let b = a;
       b = 2;
       console.log(a); // 1
+
+      let a2 = { id: 1 };
+      let b2 = a2;
+      b2.id = 2;
+      console.log(a2.id); // 2
+
+      let a3 = { id: 1 };
+      let b3 = a3;
+      b3 = { id: 2 };
+      console.log(a3.id); // 1
     </script>
   </body>
 </html>
