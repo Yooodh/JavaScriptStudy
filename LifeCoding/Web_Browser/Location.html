@@ -7,6 +7,25 @@
     <title>Location</title>
   </head>
   <body>
+    <input
+      type="button"
+      value="naver"
+      onclick="location.href = 'http://www.naver.com'"
+    />
+
+    <input
+      type="button"
+      value="daum"
+      onclick="location = 'http://www.daum.net'"
+    />
+
+    <input
+      type="button"
+      value="reload1"
+      onclick="location.href = location.href"
+    />
+
+    <input type="button" value="reload2" onclick="location.reload()" />
     <script>
       console.log(location.toString(), location.href);
       console.log(location);
@@ -18,6 +37,11 @@
       console.log(location.pathname);
       console.log(location.search);
       console.log(location.hash);
+
+      // console.log((location.href = 'http://egoing.net'));
+      // console.log((location = 'http://egoing.net'));
+      // console.log((location.href = location.href));
+      // console.log(location.reload());
     </script>
   </body>
 </html>
