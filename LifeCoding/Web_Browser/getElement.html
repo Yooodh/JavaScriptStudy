@@ -4,29 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>getElementsByTagName</title>
+    <title>getElement</title>
   </head>
   <body>
+    <p>getElementsByTagName</p>
     <ul>
       <li>HTML</li>
       <li>CSS</li>
       <li>JavaScript</li>
     </ul>
+
+    <p>getElementsByClassName</p>
     <ol>
       <li>HTML</li>
       <li class="active">CSS</li>
       <li class="active">JavaScript</li>
     </ol>
+
+    <p>getElementById</p>
+    <ol>
+      <li>HTML</li>
+      <li id="active">CSS</li>
+      <li>JavaScript</li>
+    </ol>
+
     <script>
       let ul = document.getElementsByTagName('ul')[0];
       let lis = ul.getElementsByTagName('li');
       for (let i = 0; i < lis.length; i++) {
         lis[i].style.color = 'red';
       }
+
       let lis2 = document.getElementsByClassName('active');
       for (let i = 0; i < lis2.length; i++) {
         lis2[i].style.color = 'blue';
       }
+
+      let li = document.getElementById('active');
+      li.style.color = 'yellow';
     </script>
   </body>
 </html>
