@@ -14,14 +14,18 @@
     </ul>
     <ol>
       <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
+      <li class="active">CSS</li>
+      <li class="active">JavaScript</li>
     </ol>
     <script>
       let ul = document.getElementsByTagName('ul')[0];
       let lis = ul.getElementsByTagName('li');
       for (let i = 0; i < lis.length; i++) {
         lis[i].style.color = 'red';
+      }
+      let lis2 = document.getElementsByClassName('active');
+      for (let i = 0; i < lis2.length; i++) {
+        lis2[i].style.color = 'blue';
       }
     </script>
   </body>
