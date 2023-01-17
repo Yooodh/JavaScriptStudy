@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>getElement</title>
+    <title>document</title>
   </head>
   <body>
     <p>getElementsByTagName</p>
@@ -28,6 +28,18 @@
       <li>JavaScript</li>
     </ol>
 
+    <p>querySelector</p>
+
+    <div>HTML</div>
+    <div class="active">CSS</div>
+    <div>JavaScript</div>
+
+    <p>querySelectorAll</p>
+
+    <a>HTML</a><br />
+    <a class="active">CSS</a><br />
+    <a>JavaScript</a><br />
+
     <script>
       let ul = document.getElementsByTagName('ul')[0];
       let lis = ul.getElementsByTagName('li');
@@ -42,6 +54,16 @@
 
       let li = document.getElementById('active');
       li.style.color = 'yellow';
+
+      let div = document.querySelector('div');
+      div.style.color = 'red';
+      let div2 = document.querySelector('.active');
+      div2.style.color = 'blue';
+
+      let a = document.querySelectorAll('a');
+      for (let name in a) {
+        a[name].style.color = 'green';
+      }
     </script>
   </body>
 </html>
