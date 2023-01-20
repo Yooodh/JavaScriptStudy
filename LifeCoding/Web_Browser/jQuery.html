@@ -37,8 +37,8 @@
     <ul id="execute">
       <li>
         <pre>
-    var lis = document.getElementsByTagName('li');
-    for(var i=0; i&lt;lis.length; i++){
+    let lis = document.getElementsByTagName('li');
+    for(let i=0; i&lt;lis.length; i++){
         lis[i].style.color='red';   
     </pre
         >
@@ -51,8 +51,8 @@
       </li>
       <li>
         <pre>
-    var lis = document.getElementsByClassName('active');
-    for(var i=0; i &lt; lis.length; i++){
+    let lis = document.getElementsByClassName('active');
+    for(let i=0; i &lt; lis.length; i++){
         lis[i].style.color='red';   
     }</pre
         >
@@ -65,12 +65,12 @@
       </li>
       <li>
         <pre>
-    var li = document.getElementById('active');
+    let li = document.getElementById('active');
     li.style.color='red';
     li.style.textDecoration='underline';</pre
         >
         <pre>
-    $('$active').css('color', 'red').css('textDecoration', 'underline');
+    $('#active').css('color', 'red').css('textDecoration', 'underline');
             </pre
         >
         <input
