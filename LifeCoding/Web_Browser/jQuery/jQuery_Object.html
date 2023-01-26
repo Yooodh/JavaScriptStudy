@@ -20,10 +20,17 @@
     <script>
       console.log($('li').length);
       console.log($('li')[0]);
-      let li = $('li');
-      for (let i = 0; i < li.length; i++) {
-        console.log($(li[i]).css('color', 'red'));
-      }
+
+      // let li = $('li');
+      // for (let i = 0; i < li.length; i++) {
+      //   console.log($(li[i]).css('color', 'red'));
+      // }
+
+      let lis = $('li');
+      lis.map(function (index, elem) {
+        console.log(index, elem);
+        $(elem).css('color', 'red');
+      });
     </script>
   </body>
 </html>
