@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jQuery Object</title>
+    <style>
+      div {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        float: left;
+      }
+    </style>
   </head>
   <body>
     <ul>
@@ -12,6 +20,12 @@
       <li>css</li>
       <li>JavaScript</li>
     </ul>
+
+    <span id="result">&nbsp;</span>
+    <div style="background-color: blue"></div>
+    <div style="background-color: rgb(15, 99, 30)"></div>
+    <div style="background-color: #123456"></div>
+    <div style="background-color: #f11"></div>
     <script
       src="https://code.jquery.com/jquery-1.11.0.js"
       integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
@@ -30,6 +44,13 @@
       lis.map(function (index, elem) {
         console.log(index, elem);
         $(elem).css('color', 'red');
+      });
+
+      $('div').click(function () {
+        let color = $(this).css('background-color');
+        $('#result').html(
+          "That div is <span style='color:" + color + ";'>" + color + '</span>.'
+        );
       });
     </script>
   </body>
