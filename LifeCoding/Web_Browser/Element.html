@@ -24,6 +24,12 @@
       active.className += ' readed';
       console.log(active.className);
 
+      function loop() {
+        for (let i = 0; i < active.classList.length; i++) {
+          console.log(i, active.classList[i]);
+        }
+      }
+
       /*
         식별자
         문서 내에서 특정한 엘리먼트를 식벌하기 위한 용도로 사용되는 API
@@ -46,5 +52,26 @@
         * Element.removeAttribute(name);
       */
     </script>
+    <input
+      type="button"
+      value="DOMTokenList"
+      onclick="console.log(active.classList)"
+    />
+    <input type="button" value="조회" onclick="loop();" />
+    <input
+      type="button"
+      value="추가"
+      onclick="document.getElementById('active').classList.add('marked');"
+    />
+    <input
+      type="button"
+      value="제거"
+      onclick="document.getElementById('active').classList.remove('important');"
+    />
+    <input
+      type="button"
+      value="토글"
+      onclick="document.getElementById('active').classList.toggle('current');"
+    />
   </body>
 </html>
