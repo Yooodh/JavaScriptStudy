@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>attribute vs property</title>
+  </head>
+  <body>
+    <p id="target">Hello world</p>
+    <a id="target2" href="Attribute.html">ot</a>
+
+    <script>
+      let target = document.getElementById('target');
+
+      // attribute 방식
+      target.setAttribute('class', 'important');
+
+      // property 방식
+      target.className = 'important';
+
+      let target2 = document.getElementById('target');
+      console.log('target2.href', target2.href);
+      console.log("target2.getAttribute('href')", target2.getAttribute('href'));
+    </script>
+  </body>
+</html>
