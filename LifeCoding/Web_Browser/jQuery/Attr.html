@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>attr</title>
+  </head>
+  <body>
+    <a id="target" href="http://naver.com">naver</a>
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let t = $('#target');
+      console.log(t.attr('href')); // http://naver.com
+      t.attr('title', 'naver.com'); // title 속성의 값을 설정한다.
+      t.removeAttr('title'); // title 속성을 제거한다.
+    </script>
+  </body>
+</html>
