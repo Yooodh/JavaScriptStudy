@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prop</title>
+  </head>
+  <body>
+    <a id="t1" href="jQuery.html">1</a>
+    <input id="t2" type="checkbox" checked="checked" />
+    <div id="t3">2</div>
+    <div id="t4">3</div>
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let t1 = $('#t1');
+      console.log(t1.attr('href')); // jQuery.html
+      console.log(t1.prop('href')); // http://127.0.0.1:5500/LifeCoding/Web_Browser/jQuery/jQuery.html
+
+      let t2 = $('#t2');
+      console.log(t2.attr('checked')); // checked
+      console.log(t2.prop('checked')); // true
+
+      $('#t3').prop('className', 'important');
+      $('#t4').prop('class', 'current');
+    </script>
+  </body>
+</html>
