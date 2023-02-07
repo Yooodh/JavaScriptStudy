@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node API</title>
+  </head>
+  <body id="start">
+    <ul>
+      <li><a href="./532">html</a></li>
+      <li><a href="./533">css</a></li>
+      <li>
+        <a href="./534">JavaScript</a>
+        <ul>
+          <li><a href="./535">JavaScript Core</a></li>
+          <li><a href="./536">DOM</a></li>
+          <li><a href="./537">BOM</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      let s = document.getElementById('start');
+      console.log(1, s.firstChild); // #text
+      console.log(s.firstChild.nextSibling); // ul
+      console.log(s.firstChild.nextSibling.nextSibling); // #text
+      console.log(s.firstChild.nextSibling.nextSibling.nextSibling); // script
+      console.log(
+        s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling
+      ); // #text
+      console.log(
+        s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling
+          .previousSibling
+      ); // ul
+      console.log(
+        s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling
+          .previousSibling.firstChild
+      ); // #text
+
+      console.log(
+        s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling
+          .previousSibling.firstChild.nextSibling
+      ); // li
+
+      console.log(
+        s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling
+          .previousSibling.firstChild.nextSibling.parentNode
+      ); // ul
+
+      console.log(
+        s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling
+          .previousSibling.firstChild.nextSibling.parentNode.parentNode
+      ); // body
+
+      s.firstChild.nextSibling.nextSibling.nextSibling.previousSibling.previousSibling.style.color =
+        'red';
+
+      let ul = s.firstChild.nextSibling;
+      console.log(2, ul); // ul
+      console.log(3, ul.nextSibling); // #text
+      console.log(4, ul.nextSibling.nextSibling); // script
+      console.log(5, ul.childNodes); // text, li, text, li, text, li, text
+      console.log(6, ul.childNodes[1]); // li(html)
+      console.log(s.childNodes[0]); // #text
+      console.log(s.childNodes[3]); // script
+      console.log(s.childNodes.length); // 4
+      console.log(7, ul.parentNode); // body
+    </script>
+  </body>
+</html>
