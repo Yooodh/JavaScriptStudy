@@ -65,6 +65,46 @@
       console.log(s.childNodes[3]); // script
       console.log(s.childNodes.length); // 4
       console.log(7, ul.parentNode); // body
+
+      // Node Type
+      for (let name in Node) {
+        console.log(name, Node[name]);
+      }
+
+      let body = document.getElementById('start');
+      console.log(body.nodeType);
+      console.log(body.firstChild);
+      console.log(body.firstChild.nodeType);
+      console.log(document.nodeType);
+
+      if (document.nodeType === 9) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      if (body.nodeType === 1) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      if (body.firstChild.nodeType === 3) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      if (body.firstChild.nodeType === Node.TEXT_NODE) {
+        console.log(true);
+      } else {
+        console.log(false);
+      }
+
+      // Node Name
+      console.log(body.nodeName);
+      console.log(body.firstChild.nodeName);
+      console.log(body.firstChild.nextSibling.nodeName);
     </script>
   </body>
 </html>
