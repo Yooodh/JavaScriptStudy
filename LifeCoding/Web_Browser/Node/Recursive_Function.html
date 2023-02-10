@@ -20,12 +20,25 @@
       </li>
     </ul>
     <script>
+      /*
+        function traverse(target, callback) {
+          if (target.nodeType === 1) {
+            // if(target.nodeName === 'A')
+            callback(target);
+            let c = target.childNodes;
+            for (let i = 0; i < c.length; i++) {
+              traverse(c[i], callback);
+            }
+          }
+        }
+      */
       function traverse(target, callback) {
-        if (target.nodeType === 1) {
-          // if(target.nodeName === 'A')
+        if (target.nodeType === Node.ELEMENT_NODE) {
+          // if (target.nodeName === 'A') // A태그만 출력
           callback(target);
           let c = target.childNodes;
           for (let i = 0; i < c.length; i++) {
+            // for문의 동작이 끝날 때까지 자식 노드들을 찾아서 들어가게 된다.
             traverse(c[i], callback);
           }
         }
