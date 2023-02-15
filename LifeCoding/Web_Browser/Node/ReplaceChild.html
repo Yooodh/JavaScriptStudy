@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReplaceChild</title>
+  </head>
+  <body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li id="target">JavaScript</li>
+    </ul>
+    <input type="button" onclick="callReplacdChild();" value="ReplaceChild()" />
+    <script>
+      function callReplacdChild() {
+        let a = document.createElement('a');
+        a.setAttribute('href', 'http://naver.com');
+        a.appendChild(document.createTextNode('Web browser JavaScript'));
+
+        let target = document.getElementById('target');
+        target.replaceChild(a, target.firstChild);
+      }
+    </script>
+  </body>
+</html>
