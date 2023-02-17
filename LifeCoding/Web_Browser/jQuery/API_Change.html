@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change API</title>
+  </head>
+  <body>
+    <div class="target" id="target1">target1</div>
+    <div class="target" id="target2">target2</div>
+
+    <input type="button" value="replaceAll target 1" id="btn1" />
+    <input type="button" value="replaceWith target 2" id="btn2" />
+
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // 제어의 대상이 뒤에 온다.
+      $('#btn1').click(function () {
+        $('<div>replaceAll</div>').replaceAll('#target1');
+      });
+
+      // 제어의 대상이 앞에 온다.
+      $('#btn2').click(function () {
+        $('#target2').replaceWith('<div>replaceWith</div>');
+      });
+    </script>
+  </body>
+</html>
