@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move API</title>
+  </head>
+  <body>
+    <div class="target" id="target1">target1</div>
+
+    <div id="source">source</div>
+
+    <input type="button" value="append source to target 1" id="btn1" />
+
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $('#btn1').click(function () {
+        $('#target1').append($('#source'));
+      });
+    </script>
+  </body>
+</html>
