@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Viewport</title>
+    <title>Scroll</title>
   </head>
   <body>
     <style>
@@ -12,37 +12,31 @@
         padding: 0;
         margin: 0;
       }
+
       div {
         border: 50px solid #1065e6;
         padding: 50px;
         margin: 50px;
       }
+
       #target {
         width: 100px;
         height: 2000px;
       }
     </style>
-    <table>
-      <tr>
-        <td>
-          <div>
-            <div id="target">Coding</div>
-          </div>
-        </td>
-      </tr>
-    </table>
+
+    <input type="button" id="scrollBtn" value="scrollTo(0, 1000)" />
+
     <script>
-      let t = document.getElementById('target');
-      setInterval(function () {
-        console.log(
-          'getBoundingClientRect : ',
-          t.getBoundingClientRect().top,
-          'scrollY : ',
-          window.scrollY,
-          'pageYOffset : ',
-          window.pageYOffset
-        );
-      }, 1000);
+      document
+        .getElementById('scrollBtn')
+        .addEventListener('click', function () {
+          window.scrollTo(0, 1000);
+        });
     </script>
+
+    <div>
+      <div id="target">Coding</div>
+    </div>
   </body>
 </html>
