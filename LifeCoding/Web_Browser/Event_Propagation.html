@@ -30,6 +30,23 @@
       <input type="button" id="target" value="target" />
     </fieldset>
 
-    <script></script>
+    <script>
+      function handler(event) {
+        let phases = ['capturing', 'target', 'bubbling'];
+        console.log(
+          event.target.nodeName,
+          this.nodeName,
+          phases[event.eventPhase - 1]
+        );
+      }
+      document
+        .getElementById('target')
+        .addEventListener('click', handler, true);
+      document
+        .querySelector('fieldset')
+        .addEventListener('click', handler, true);
+      document.querySelector('body').addEventListener('click', handler, true);
+      document.querySelector('html').addEventListener('click', handler, true);
+    </script>
   </body>
 </html>
