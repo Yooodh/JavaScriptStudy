@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Cancel</title>
+  </head>
+  <body>
+    <p>
+      <label>prevent event on</label><input id="prevent" type="checkbox" name="eventprevent" value="on" />
+  </p>
+  <p>
+      <a href="http://naver.com" onclick="if(document.getElementById('prevent').checked) return false;">naver</a>
+  </p>
+  <p>
+      <form action="http://naver.com" onsubmit="if(document.getElementById('prevent').checked) return false;">
+              <input type="submit" />
+      </form>
+  </p>
+  </body>
+</html>
