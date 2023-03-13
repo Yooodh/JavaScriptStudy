@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Event</title>
+  </head>
+  <body>
+    <input type="button" id="pure" value="pure" />
+    <input type="button" id="jquery" value="jQuery" />
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 순수하게 구현했을 때
+      let target = document.getElementById('pure');
+      if (target.addEventListener) {
+        target.addEventListener('click', function (event) {
+          alert('pure');
+        });
+      } else {
+        target.attachEvent('onclick', function (event) {
+          alert('pure');
+        });
+      }
+
+      // jQuery를 사용했을 때
+      $('#jquery').on('click', function (event) {
+        alert('jQuery');
+      });
+    </script>
+  </body>
+</html>
