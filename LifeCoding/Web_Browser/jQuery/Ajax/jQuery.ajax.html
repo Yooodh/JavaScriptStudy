@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery.ajax()</title>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $.ajax({
+        url: 'http://fiddle.jshell.net/favicon.png',
+        beforeSend: function (xhr) {
+          xhr.overrideMimeType('text/plain; charset=x-user-defined');
+        },
+      }).done(function (data) {
+        if (console && console.log) {
+          console.log('Sample of data:', data.slice(0, 100));
+        }
+      });
+    </script>
+  </body>
+</html>
