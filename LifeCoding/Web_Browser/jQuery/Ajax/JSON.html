@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <p id="timezones"></p>
+    <input type="button" id="execute" value="execute" />
+    <script
+      src="https://code.jquery.com/jquery-1.11.0.js"
+      integrity="sha256-zgND4db0iXaO7v4CLBIYHGoIIudWI5hRMQrPB20j0Qw="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $('#execute').click(function () {
+        $.ajax({
+          url: './time3.php',
+          dataType: 'json',
+          success: function (data) {
+            let str = '';
+            for (let name in data) {
+              str += '<li>' + data[name] + '</li>';
+            }
+            $('#timezones').html('<ul>' + str + '</ul>');
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
