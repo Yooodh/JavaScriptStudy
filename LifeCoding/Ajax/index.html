@@ -24,35 +24,33 @@ nightDayHandler(this);
   <li>
     <a
       onclick='
-    fetch("html").then(function(response){
-     response.text().then(function(text){
-       document.querySelector("article").innerHTML=text;
-     })
-   })'
+    fetchPage("html")'
       >HTML</a
     >
   </li>
   <li>
     <a
       onclick='
-      fetch("css").then(function(response){
-       response.text().then(function(text){
-         document.querySelector("article").innerHTML=text;
-       })
-     })'
+      fetchPage("css")'
       >CSS</a
     >
   </li>
   <li><a
     onclick='
-    fetch("javascript").then(function(response){
-     response.text().then(function(text){
-       document.querySelector("article").innerHTML=text;
-     })
-   })'
+    fetchPage("JavaScript")'
     >JavaScript</a></li>
 </ol>
 <h2>WEB</h2>
 <article></article>
+
+<script>
+  function fetchPage(name){
+  fetch(name).then(function(response){
+     response.text().then(function(text){
+       document.querySelector("article").innerHTML=text;
+     })
+   })
+  }
+</script>
 </body>
 </html>
