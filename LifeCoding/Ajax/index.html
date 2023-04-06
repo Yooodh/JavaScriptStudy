@@ -20,28 +20,8 @@
 nightDayHandler(this);
 "
 />
-<ol>
-  <li>
-    <a
-    href='#!html'
-      onclick='
-    fetchPage("html")'
-      >HTML</a
-    >
-  </li>
-  <li>
-    <a
-    href='#!css'
-      onclick='
-      fetchPage("css")'
-      >CSS</a
-    >
-  </li>
-  <li><a
-    href='#!javascript'
-    onclick='
-    fetchPage("JavaScript")'
-    >JavaScript</a></li>
+<ol id='nav'>
+ 
 </ol>
 <h2>WEB</h2>
 <article></article>
@@ -60,6 +40,13 @@ nightDayHandler(this);
   }else {
     fetchPage('welcome')
   }
+
+  fetch('list').then(function(response){
+     response.text().then(function(text){
+       document.querySelector("#nav").innerHTML=text;
+     })
+   })
+  
 </script>
 </body>
 </html>
