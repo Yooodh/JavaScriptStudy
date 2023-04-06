@@ -43,7 +43,23 @@ nightDayHandler(this);
 
   fetch('list').then(function(response){
      response.text().then(function(text){
-       document.querySelector("#nav").innerHTML=text;
+      // console.log(text);
+      let items = text.split(',');
+      let i = 0;
+      let tags = '';
+      while(i<items.length){
+        let item = items[i];
+        item = item.trim();
+
+        // <li><a href='#!html' onclick='fetchPage("html")'html</a></li>
+        let tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+        console.log(tag)
+        
+        tags = tags+tag;
+        i = i+1;
+      }
+      console.log(items)
+       document.querySelector("#nav").innerHTML=tags;
      })
    })
   
