@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prizewinner</title>
+  </head>
+  <body>
+    <script>
+      let 당첨자수 = 3;
+      let 댓글선택자 = '._3b-9>div>.UFIComment .UFICommentActorName';
+      function shuffle(a) {
+        for (let i = a.length; i; i--) {
+          let j = Math.floor(Math.random() * i);
+          [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        }
+      }
+      let list = [];
+      document.querySelectorAll(댓글선택자).forEach(function (e) {
+        list.push(e.innerText);
+      });
+      let = list.filter((v, i, a) => a.indexOf(v) === i);
+      shuffle(list);
+      console.log(list.slice(0, 당첨자수));
+    </script>
+  </body>
+</html>
