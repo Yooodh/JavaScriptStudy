@@ -37,20 +37,20 @@
   '
     />
     <input
+      id="night_day"
       type="button"
-      value="black"
+      value="night"
       onclick='
-    if(document.querySelector("body").dataset.mode === "day"){
+    if(document.querySelector("#night_day").value === "night")  {
       document.querySelector("body").style.backgroundColor = "black";
       document.querySelector("body").style.color = "white";
-      document.querySelector("body").dataset.mode = "night";
-      this.value="day"
+      document.querySelector("#night_day").value = "day"
     }else {
       document.querySelector("body").style.backgroundColor = "white";
-      document.querySelector("body").style.color = "black";
-      document.querySelector("body").dataset.mode = "day";
-      this.value = "night"
-    }'
+    document.querySelector("body").style.color = "black";
+    document.querySelector("#night_day").value = "night"
+    }
+    '
     />
 
     <ol>
